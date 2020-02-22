@@ -1,0 +1,1 @@
+# Sistema de gerenciamento de personagens de rpg utilizando Django
