@@ -15,7 +15,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
-  frontend:
+  app:
     build: ./frontend
     volumes:
       - ./frontend:/app
