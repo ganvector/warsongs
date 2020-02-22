@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: postgres_db
+    volumes:
+      - ./postgres:/var/lib/postgres/11/main
+  backend:
+    build: .
+    command: python3 /app/backend/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./characterManager:/app/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      # One-way volume to use node_modules from inside image
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    command: npm start
