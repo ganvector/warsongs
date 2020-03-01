@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'campanha',
     'personagem',
-    'usuario'
+    'usuario',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
