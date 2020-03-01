@@ -19,7 +19,7 @@ class Personagem(models.Model):
     classes = models.ManyToManyField(Classe, through="ClasseDePersonagem", through_fields=('personagem', 'classe'))
 
     def save(self):
-        super.save()
+        super().save()
         nivel = 0
         for cp in self.classedepersonagem_set.all():
             nivel += cp.nivel
@@ -59,6 +59,7 @@ class Personagem(models.Model):
 
     class Meta:
         verbose_name_plural = 'personagens'
+        fields = ['nome', 'nivel']
 
     def __str__(self):
         return f'[Nome: {self.nome}] - [Nivel: {self.nivel_total}]- [Player: {self.jogador.username}] - [Campanha: {self.campanha.titulo}]'
