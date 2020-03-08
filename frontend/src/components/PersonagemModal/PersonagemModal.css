@@ -1,0 +1,52 @@
+.Modal90w {
+    width: 90%;
+    max-width: none !important;
+    color: orange;
+}
+
+small {
+    font-weight: bold;
+}
+
+.AtributoBase {
+    text-align: center;
+    font-size: 40px;
+}
+
+.AtributoMod {
+    text-align: center;
+    font-size: 20px;
+}
+
+.AtributoNome {
+    text-align: center;
+    font-size: 13px;
+}
+
+.RowDescrPericias{
+    margin-bottom: 2px;
+    height: 24px;
+}
+
+.RowDescrPericias .ColBulletPericia {
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    border: 3px solid #000;
+    margin-top: 5px;
+}
+
+.RowDescrPericias .ColModPericia {
+    margin-left: 3px;
+    margin-right: 4px;
+    text-align: center;
+}
+
+.RowDescrPericias .ColNomePericia {
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: left;
+    margin-top: 2px;
+    font-size: 12px;
+    
+}
