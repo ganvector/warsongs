@@ -43,7 +43,7 @@ const listarPericias = (data) => {
 
 const fichaTesteResistencia = (props) => {
   return (
-    <Col style={{ marginLeft: "2px", marginTop: "12px" }}>
+    <Col style={{ marginLeft: "2px", marginTop: "9px" }}>
       {listarPericias(props.data)}
 
       <Row className="RowDescrPericias">

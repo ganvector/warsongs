@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Navbar from "./navbar";
-import Counter from "./counter";
+import Navbar from "../components/Navbar/Navbar";
+import Counter from "../components/counter";
 import axios from "axios";
-import PersonagemCard from "./personagem_card";
+import PersonagemCard from "../components/PersonagemCard/PersonagemCard";
+import PersonagemModal from '../components/PersonagemModal/PersonagemModal';
 
 function get_estatisticas(event) {
   axios
@@ -20,7 +21,7 @@ function get_campanhas(event) {
   axios
     .get("campanha/get_campanhas")
     .then(data => {
-      console.log(data.data.campanhas);
+      console.log(data.data.campanhas); // TODO remover esse console.log
       document.querySelector(
         "#campanhas"
       ).textContent = `${data.data.campanhas}`;
@@ -32,10 +33,10 @@ function get_personagens(event) {
   axios
     .get("personagens/get_personagens")
     .then(data => {
-      console.log(data.data.personagens);
+      console.log(data.data[0]);
       document.querySelector(
         "#personagens"
-      ).textContent = `${data.data.personagens[1].nome}`;
+      ).textContent = `${data.data[0].nome}`;
     })
     .catch(err => console.log(err.message));
 }
@@ -52,7 +53,10 @@ class Page extends Component {
         <div id="campanhas"></div>
         <button onClick={get_personagens}> Get Personagens</button>
         <div id="personagens"></div>
-        <PersonagemCard />
+        <PersonagemCard nome="vitor" />
+        <PersonagemCard nome="eric" />
+        <PersonagemCard nome="ximira" />
+        <PersonagemModal />
       </div>
     );
   }

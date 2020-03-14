@@ -1,0 +1,35 @@
+.Navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #343a40 !important;
+}
+
+.Brand {
+  display: inline-block;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.Username {
+  color: yellow;
+}
+
+.UserImage {
+  color: white;
+  background-color: white;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.MiniProfile:hover {
+  font-weight: bolder;
+}
