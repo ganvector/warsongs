@@ -51,3 +51,30 @@ small {
     font-size: 12px;
     
 }
+
+.LineDescription {
+    height: 55px;
+    margin-bottom: 10px;
+    border: 3px solid orange;
+
+    .AtributoMod {
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .AtributoNome {
+        margin-top: 16px;
+        margin-bottom: auto;
+        margin-bottom: 10px;
+        vertical-align: middle;
+        font-size: 12px;
+    }
+}
+
+.RowFichaProficiencia {
+    height: 290px,;
+    margin-top: 15px,;
+    border: 3px solid orange;
+}
