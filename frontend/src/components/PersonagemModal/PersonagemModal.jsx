@@ -9,8 +9,11 @@ import FichaAtributos from './FichaAtributos/FichaAtributos';
 import FichaTesteResistencia from './FichaTesteResistencia/FichaTesteResistencia';
 import FichaPericias from './FichaPericias/FichaPericias';
 import FichaProficiencias from './FichaProficiencias/FichaProficiencias';
+import FichaDadosDeVidaAtual from './FichaDadosDeVida/FichaDadosDeVidaAtual'
+import FichaDadosDeVidaTotal from './FichaDadosDeVida/FichaDadosDeVidaTotal';
 // STYLES
 import './PersonagemModal.scss'
+import { OverlayTrigger } from 'react-bootstrap';
 const data = {
   img: "https://66.media.tumblr.com/50d79afb983692a4bd0f6edb17239d23/tumblr_papmsfljGX1r14dt9o2_250.png",
   nome: "Milliardo",
@@ -102,7 +105,37 @@ const data = {
     idiomas: ['Comum', 'Elfico', 'Goblin'],
     ferramentas: ['Ferramentas de Ferreiro', 'Ferramentas de Artesão'],
     armas: ['Simples', 'Marciais', 'Arcos']
-  }
+  },
+  classDeArmadura: 18,
+  iniciativa: 20,
+  deslocamento: 10.5,
+  pvMax: 200,
+  pvAtual: 185,
+  pvTemp: 0,
+  dadosDeVidaTotal: [
+    {
+      classe: 'Bruxo',
+      dado: 'D8',
+      qtd: 15
+    },
+    {
+      classe: 'Guerreiro',
+      dado: 'D10',
+      qtd: 5
+    }
+  ],
+  dadosDeVidaAtual: [
+    {
+      classe: 'Bruxo',
+      dado: 'D8',
+      qtd: 13,
+    },
+    {
+      classe: 'Guerreiro',
+      dado: 'D10',
+      qtd: 3,
+    }
+  ]
 }
 
 class PersonagemModal extends Component {
@@ -124,22 +157,13 @@ class PersonagemModal extends Component {
         <Modal.Header closeButton>
           <Modal.Title>Ficha de Personagem</Modal.Title>
         </Modal.Header>
-        <Modal.Body
-          style={
-            {
-              "backgroundImage": "url('https://img.docero.com.br/photo/l/ssces1.png')",
-              "backgroundRepeat": "no-repear",
-              "backgroundSize": "100%"
-            }
-          }
-
-        >
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
                 <FichaDestaque data={data} />
                 <Row>
-                  <Col style={{ marginLeft: "20px", marginRight: "50px" }}>
+                  <Col className="ModalCol red">
                     <Row>
                       <FichaAtributos data={data} />
                       <Col style={{ marginLeft: "8px" }}>
@@ -171,9 +195,141 @@ class PersonagemModal extends Component {
                       </Col>
                     </Row>
                   </Col>
-                  <Col></Col>
 
-                  <Col></Col>
+                  <Col className="ModalCol green">
+                    <Row className="SecondColRow">
+                      <Col className="ca-ini-des">
+                        <Row>
+                          <Col className="AtributoNome">
+                            CLASSE DE ARMADURA
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoBase">
+                            {data.classDeArmadura}
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col className="ca-ini-des" style={{ marginLeft: "2%", marginRight: "2%" }}>
+                        <Row>
+                          <Col className="AtributoNome" style={{ fontSize: "12px" }}>
+                            INICIATIVA
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoBase">
+                            {data.iniciativa}
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col className="ca-ini-des">
+                        <Row>
+                          <Col className="AtributoNome">
+                            DESLOCAMENTO
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoBase">
+                            {data.deslocamento}m
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row className="PV-Atual">
+                      <Col>
+                        <Row style={{ marginTop: "10px" }}>
+                          <Col md={7} className="PV-Max">
+                            PONTOS DE VIDA MAXIMOS
+                          </Col>
+                          <Col className="PV-Max" style={{ textDecoration: "underline" }}>
+                            {data.pvMax}
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoBase">
+                            {data.pvAtual}
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoNome">
+                            PONTOS DE VIDA ATUAIS
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row className="PV-Temp">
+                      <Col>
+                        <Row>
+                          <Col className="AtributoBase">
+                            {data.pvTemp}
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="AtributoNome">
+                            PONTOS DE VIDA TEMPORARIOS
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row className="RowVidaMorte">
+                      <Col className="ColVida">
+                        <FichaDadosDeVidaTotal data={data.dadosDeVidaTotal} />
+                        <Row>
+                          <FichaDadosDeVidaAtual data={data.dadosDeVidaAtual} />
+                        </Row>
+                        <Row>
+                          <Col className="AtributoNome">
+                            DADOS DE VIDA
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col className="ColMorte">
+                        <Row></Row>
+                        <Row></Row>
+                        <Row>
+                          <Col className="AtributoNome">
+                            TESTE CONTRA MORTE
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>Ataques e Magias</Col>
+                    </Row>
+                    <Row>
+                      <Col>Equipamentos</Col>
+                    </Row>
+                  </Col>
+
+                  <Col className="ModalCol blue" style={{ marginRight: "20px" }}>
+                    <Row>
+                      <Col>
+                        <Row>
+                          <Col>
+                            Tracos de Personalidade
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            Ideais
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            Vinculos
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            Fraquezas
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>Caracteristicas e Traços</Col>
+                    </Row>
+                  </Col>
 
                 </Row>
 

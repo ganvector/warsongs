@@ -1,7 +1,22 @@
+$break-hd: 1366px;
+$break-fhd: 1920px;
+$break-uwide: 2560px;
+
 .Modal90w {
-    width: 90%;
     max-width: none !important;
     color: orange;
+
+    @media screen and (min-width: $break-hd){
+        width: 90%;
+    }
+
+    @media screen and (min-width: $break-fhd){
+        width: 63%;
+    }
+
+    @media screen and (min-width: $break-uwide){
+        width: 1203px;
+    }
 }
 
 small {
@@ -78,3 +93,94 @@ small {
     margin-top: 15px,;
     border: 3px solid orange;
 }
+
+.modal-body {
+    background-image: url('https://img.docero.com.br/photo/l/ssces1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.SecondColRow {
+    margin-top: 18px;
+    height: 100px;
+}
+
+.ca-ini-des {
+    border: 3px solid orange;
+    width: 30%;
+
+    .AtributoNome {
+        margin-top: 6px;
+        height: 36px;
+        font-size: 10px;
+    }
+
+    .AtributoBase {
+        font-size: 25px;
+
+    }
+}
+
+.ModalCol {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.PV-Atual {
+    border: 3px solid orange;
+    margin-top: 13px;
+    height: 123px;
+
+    .PV-Max {
+        font-size: 13px;
+    }
+
+    .AtributoBase {
+        height: 68px;
+    }
+}
+
+.PV-Temp {
+    border: 3px solid orange;
+    margin-top: 6px;
+    height: 100px;
+
+    .AtributoBase {
+        height: 70px;
+    }
+}
+
+
+.RowVidaMorte {
+
+    margin-top: 11px;
+    height: 100px;
+
+    .ColVida {
+        border: 3px solid orange;
+        margin-right: 3%;
+        margin-left: 2%;
+    }
+
+    .ColMorte {
+        border: 3px solid orange;
+        margin-right: 3%;
+        margin-left: 2%;
+
+        .AtributoNome {
+            font-size: 10px;
+        }
+    }
+
+}
+// .red {
+//     background-color: red;
+// }
+
+// .blue {
+//     background-color: blue;
+// }
+
+// .green {
+//     background-color: green;
+// }
