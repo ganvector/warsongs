@@ -1,6 +1,6 @@
 version: "3"
 services:
-  backend:
+  django:
     build: ./backend
     volumes:
       - ./backend:/app/backend
@@ -9,9 +9,14 @@ services:
     stdin_open: true
     tty: true
     command: python3 manage.py runserver 0.0.0.0:8000
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_ADDRESS: ${POSTGRES_ADDRESS}
     depends_on:
-      - db
-  frontend:
+      - postgres
+  react:
     build: ./frontend
     volumes:
       - ./frontend:/app
@@ -22,9 +27,16 @@ services:
     environment:
       - NODE_ENV=development
     depends_on:
-      - backend
+      - django
     command: npm start
-  db:
+
+  postgres:
     image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: 'America/Cuiaba'
     volumes:
       - ./postgres:/var/lib/postgres/11/main
