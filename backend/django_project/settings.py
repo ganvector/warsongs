@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "0.0.0.0",
     "localhost",
-    "backend"
+    "django"
 ]
 
 
@@ -84,13 +84,15 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'HOST': os.getenv('POSTGRES_ADDRESS'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'PORT': '5432',
     }
 }
 
+print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
