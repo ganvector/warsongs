@@ -11,6 +11,7 @@ import FichaPericias from './FichaPericias/FichaPericias';
 import FichaProficiencias from './FichaProficiencias/FichaProficiencias';
 import FichaDadosDeVidaAtual from './FichaDadosDeVida/FichaDadosDeVidaAtual'
 import FichaDadosDeVidaTotal from './FichaDadosDeVida/FichaDadosDeVidaTotal';
+import FichaTesteCMorte from './FichaTesteCMorte/FichaTesteCMorte'; //TODO fazer o resto disso
 // STYLES
 import './PersonagemModal.scss'
 import { OverlayTrigger } from 'react-bootstrap';
@@ -135,7 +136,11 @@ const data = {
       dado: 'D10',
       qtd: 3,
     }
-  ]
+  ],
+  testeContraMorte: {
+    sucesso: 2,
+    falhas: 2
+  }
 }
 
 class PersonagemModal extends Component {
@@ -284,12 +289,8 @@ class PersonagemModal extends Component {
                         </Row>
                       </Col>
                       <Col className="ColMorte">
-                        <Row></Row>
-                        <Row></Row>
                         <Row>
-                          <Col className="AtributoNome">
-                            TESTE CONTRA MORTE
-                          </Col>
+                          <FichaTesteCMorte sucessos={data.testeContraMorte.sucesso} falhas={data.testeContraMorte.falhas} />
                         </Row>
                       </Col>
                     </Row>
