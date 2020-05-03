@@ -1,19 +1,18 @@
-import React from 'react'
+import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const fichaDestaque = props => {
-
+const fichaDestaque = (props) => {
   const classes = () => {
     return props.data.classes.map((classe, index) => {
-      return (`${classe.nome} ${classe.nivel} `);
+      return `${classe.nome} ${classe.nivel} `;
     });
-  }
+  };
 
   return (
-    <Row className="align-items-center" style={{ "marginBottom": "30px" }}>
+    <Row className="align-items-center" style={{ marginBottom: '30px' }}>
       <Col md={2}>
-        <img src={props.data.img} alt="" height={"200px"} width={"200px"} />
+        <img src={props.data.img} alt="" height={'200px'} width={'200px'} />
       </Col>
       <Col md={3}>
         <Row>
@@ -32,9 +31,7 @@ const fichaDestaque = props => {
         <Row>
           <Col>
             <Row>
-              <Col>
-                {classes()}
-              </Col>
+              <Col>{classes()}</Col>
             </Row>
             <Row>
               <Col>
@@ -44,9 +41,7 @@ const fichaDestaque = props => {
           </Col>
           <Col>
             <Row>
-              <Col>
-                {props.data.antecedente}
-              </Col>
+              <Col>{props.data.antecedente}</Col>
             </Row>
             <Row>
               <Col>
@@ -56,9 +51,7 @@ const fichaDestaque = props => {
           </Col>
           <Col>
             <Row>
-              <Col>
-                {props.data.playerName}
-              </Col>
+              <Col>{props.data.playerName}</Col>
             </Row>
             <Row>
               <Col>
@@ -71,9 +64,7 @@ const fichaDestaque = props => {
         <Row>
           <Col>
             <Row>
-              <Col>
-                {props.data.racaNome}
-              </Col>
+              <Col>{props.data.racaNome}</Col>
             </Row>
             <Row>
               <Col>
@@ -83,9 +74,7 @@ const fichaDestaque = props => {
           </Col>
           <Col>
             <Row>
-              <Col>
-                {props.data.tendencia}
-              </Col>
+              <Col>{props.data.tendencia}</Col>
             </Row>
             <Row>
               <Col>
@@ -95,9 +84,7 @@ const fichaDestaque = props => {
           </Col>
           <Col>
             <Row>
-              <Col>
-                {props.data.experiencia}
-              </Col>
+              <Col>{props.data.experiencia}</Col>
             </Row>
             <Row>
               <Col>
@@ -109,6 +96,6 @@ const fichaDestaque = props => {
       </Col>
     </Row>
   );
-}
+};
 
 export default fichaDestaque;

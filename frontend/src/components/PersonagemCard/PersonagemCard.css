@@ -48,7 +48,7 @@
 }
 
 .card .additional .user-card::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 10%;

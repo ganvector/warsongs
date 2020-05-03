@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import "./PersonagemCard.css";
+import React, { Component } from 'react';
+import './PersonagemCard.css';
 
 //TODO REMOVER TAG SVG E TUDO DENTR
-const personagemCard = props => {
+const personagemCard = (props) => {
   return (
     <span className="card">
       <div className="aditional">
