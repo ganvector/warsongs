@@ -8,8 +8,13 @@ import FichaMagias from './FichaMagias/FichaMagias';
 const fichaAcoes = (props) => {
   return (
     <Col>
-      <FichaAtaque />
-      <FichaMagias />
+      <Row style={{ height: '380px' }}>
+        <Col>
+          <FichaAtaque ataques={props.ataques} />
+          <FichaMagias magias={props.magias} />
+        </Col>
+      </Row>
+
       <Row>
         <Col className="AtributoNome">ATAQUES & MAGIAS</Col>
       </Row>

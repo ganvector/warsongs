@@ -169,6 +169,7 @@ const data = {
   magias: [
     {
       nome: 'Bruxaria',
+      preparada: true,
       nivel: '1',
       escola: 'Evocação',
       tempoConjuracao: '1 ação bonus',
