@@ -1,17 +1,22 @@
 import React, { useState, useRef } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { Popover, Overlay } from 'react-bootstrap';
+import { Col, Row, Popover, Overlay } from 'react-bootstrap';
 
-const dadosFormating = (dados) => {
-  return dados.map((element, index) => {
-    return (
-      <div>
-        {element.qtd}
-        {element.dado} ({element.classe})
-      </div>
-    );
-  });
-};
+// const dadosFormating = (dados) =>
+//   dados.map((element, index) => (
+//     <div>
+//       {element.qtd}
+//       {element.dado} ({element.classe})
+//     </div>
+//   ));
+
+function dadosFormating(dados) {
+  return dados.map((element) => (
+    <div>
+      {element.qtd}
+      {element.dado} ({element.classe})
+    </div>
+  ));
+}
 
 const FichaDadosDeVida = (props) => {
   const [show, setShow] = useState(false);
@@ -20,13 +25,11 @@ const FichaDadosDeVida = (props) => {
   const ref = useRef(null);
 
   const handleClick = (event) => {
-    let newDados = dadosFormating(props.data);
+    const newDados = dadosFormating(props.data);
     setDados(newDados);
     setShow(!show);
     setTarget(event.target);
   };
-
-  const elements = props.data[0];
 
   return (
     <Row style={{ marginTop: '10px' }} onClick={handleClick}>

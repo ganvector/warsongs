@@ -11,11 +11,11 @@ import FichaPericias from './FichaPericias/FichaPericias';
 import FichaProficiencias from './FichaProficiencias/FichaProficiencias';
 import FichaDadosDeVidaAtual from './FichaDadosDeVida/FichaDadosDeVidaAtual';
 import FichaDadosDeVidaTotal from './FichaDadosDeVida/FichaDadosDeVidaTotal';
-import FichaTesteCMorte from './FichaTesteCMorte/FichaTesteCMorte'; //TODO fazer o resto disso
+import FichaTesteCMorte from './FichaTesteCMorte/FichaTesteCMorte'; // TODO fazer o resto disso
 import FichaAcoes from './fichaAcoes/FichaAcoes';
 // STYLES
 import './PersonagemModal.scss';
-import { OverlayTrigger } from 'react-bootstrap';
+
 const data = {
   img:
     'https://66.media.tumblr.com/50d79afb983692a4bd0f6edb17239d23/tumblr_papmsfljGX1r14dt9o2_250.png',
@@ -322,7 +322,7 @@ class PersonagemModal extends Component {
                         </Row>
                         <Row>
                           <Col className="AtributoBase">
-                            {data.deslocamento}m
+                            {data.deslocamento}
                           </Col>
                         </Row>
                       </Col>
