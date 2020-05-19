@@ -4,16 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import FichaDestaque from './FichaDestaque/FichaDestaque';
-import FichaAtributos from './FichaAtributos/FichaAtributos';
-import FichaTesteResistencia from './FichaTesteResistencia/FichaTesteResistencia';
-import FichaPericias from './FichaPericias/FichaPericias';
-import FichaProficiencias from './FichaProficiencias/FichaProficiencias';
-import FichaDadosDeVidaAtual from './FichaDadosDeVida/FichaDadosDeVidaAtual';
-import FichaDadosDeVidaTotal from './FichaDadosDeVida/FichaDadosDeVidaTotal';
-import FichaTesteCMorte from './FichaTesteCMorte/FichaTesteCMorte'; // TODO fazer o resto disso
-import FichaAcoes from './fichaAcoes/FichaAcoes';
-// STYLES
+import PersonagemTab from './PersonagemTab/PersonagemTab';
+import PersonagemInfo from './PersonagemInfo/PersonagemInfo';
+
 import './PersonagemModal.scss';
 
 const data = {
@@ -25,10 +18,12 @@ const data = {
     { nome: 'Guerreiro', nivel: '5' },
   ],
   antecedente: 'Héroi Renegado',
+  alinhamento: 'Caotico Bom',
   playerName: 'Vitor',
-  racaNome: 'Meio-Elfo',
+  raca: { nome: 'Meio-Elfo' },
   tendencia: 'CB',
-  experiencia: 8000,
+  experienciaAtual: 8000,
+  experienciaProxNivel: 10000,
   atr_base: {
     for: 18,
     des: 14,
@@ -113,7 +108,7 @@ const data = {
   iniciativa: 20,
   deslocamento: 10.5,
   pvMax: 200,
-  pvAtual: 185,
+  pvAtual: 200,
   pvTemp: 0,
   dadosDeVidaTotal: [
     {
@@ -210,210 +205,14 @@ class PersonagemModal extends Component {
         onHide={this.handleClose}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Ficha de Personagem</Modal.Title>
+          <Modal.Title>{data.nome}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
-            <Row>
+            <PersonagemInfo data={data} />
+            <Row style={{ 'margin-top': '15px' }}>
               <Col>
-                <FichaDestaque data={data} />
-                <Row>
-                  <Col className="ModalCol red">
-                    <Row>
-                      <FichaAtributos data={data} />
-                      <Col style={{ marginLeft: '8px' }}>
-                        <Row className="LineDescription">
-                          <Col md={3} className="AtributoMod">
-                            {data.inspiracao}
-                          </Col>
-                          <Col>
-                            <div className="AtributoNome">INSPIRAÇÂO</div>
-                          </Col>
-                        </Row>
-                        <Row
-                          className="LineDescription"
-                          style={{ marginTop: '19px' }}
-                        >
-                          <Col md={3} className="AtributoMod">
-                            {data.proficiencia}
-                          </Col>
-                          <Col>
-                            <div
-                              className="AtributoNome"
-                              style={{ fontSize: '10px' }}
-                            >
-                              BÔNUS DE PROFICIÊNCIA
-                            </div>
-                          </Col>
-                        </Row>
-                        <Row
-                          style={{
-                            height: '200px',
-                            marginTop: '17px',
-                            border: '3px solid orange',
-                          }}
-                        >
-                          <FichaTesteResistencia data={data} />
-                        </Row>
-                        <Row
-                          style={{
-                            height: '530px',
-                            marginTop: '18px',
-                            border: '3px solid orange',
-                          }}
-                        >
-                          <FichaPericias data={data} />
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <Row
-                          className="LineDescription"
-                          style={{ marginTop: '8px' }}
-                        >
-                          <Col className="AtributoMod" md={2}>
-                            {data.pericia_val.percepcao + 10}
-                          </Col>
-                          <Col>
-                            <div className="AtributoNome">
-                              SABEDORIA PASSIVA
-                            </div>
-                          </Col>
-                        </Row>
-                        <Row className="RowFichaProficiencia">
-                          <FichaProficiencias data={data} />
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-
-                  <Col className="ModalCol green">
-                    <Row className="SecondColRow">
-                      <Col className="ca-ini-des">
-                        <Row>
-                          <Col className="AtributoNome">CLASSE DE ARMADURA</Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoBase">
-                            {data.classDeArmadura}
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col
-                        className="ca-ini-des"
-                        style={{ marginLeft: '2%', marginRight: '2%' }}
-                      >
-                        <Row>
-                          <Col
-                            className="AtributoNome"
-                            style={{ fontSize: '12px' }}
-                          >
-                            INICIATIVA
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoBase">{data.iniciativa}</Col>
-                        </Row>
-                      </Col>
-                      <Col className="ca-ini-des">
-                        <Row>
-                          <Col className="AtributoNome">DESLOCAMENTO</Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoBase">
-                            {data.deslocamento}
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row className="PV-Atual">
-                      <Col>
-                        <Row style={{ marginTop: '10px' }}>
-                          <Col md={7} className="PV-Max">
-                            PONTOS DE VIDA MAXIMOS
-                          </Col>
-                          <Col
-                            className="PV-Max"
-                            style={{ textDecoration: 'underline' }}
-                          >
-                            {data.pvMax}
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoBase">{data.pvAtual}</Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoNome">
-                            PONTOS DE VIDA ATUAIS
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row className="PV-Temp">
-                      <Col>
-                        <Row>
-                          <Col className="AtributoBase">{data.pvTemp}</Col>
-                        </Row>
-                        <Row>
-                          <Col className="AtributoNome">
-                            PONTOS DE VIDA TEMPORARIOS
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row className="RowVidaMorte">
-                      <Col className="ColVida">
-                        <FichaDadosDeVidaTotal data={data.dadosDeVidaTotal} />
-                        <Row>
-                          <FichaDadosDeVidaAtual data={data.dadosDeVidaAtual} />
-                        </Row>
-                        <Row>
-                          <Col className="AtributoNome">DADOS DE VIDA</Col>
-                        </Row>
-                      </Col>
-                      <Col className="ColMorte">
-                        <Row>
-                          <FichaTesteCMorte
-                            sucessos={data.testeContraMorte.sucesso}
-                            falhas={data.testeContraMorte.falhas}
-                          />
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row className="RowAcoes">
-                      <FichaAcoes ataques={data.ataques} magias={data.magias} />
-                    </Row>
-                    <Row>
-                      <Col>Equipamentos</Col>
-                    </Row>
-                  </Col>
-
-                  <Col
-                    className="ModalCol blue"
-                    style={{ marginRight: '20px' }}
-                  >
-                    <Row>
-                      <Col>
-                        <Row>
-                          <Col>Tracos de Personalidade</Col>
-                        </Row>
-                        <Row>
-                          <Col>Ideais</Col>
-                        </Row>
-                        <Row>
-                          <Col>Vinculos</Col>
-                        </Row>
-                        <Row>
-                          <Col>Fraquezas</Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>Caracteristicas e Traços</Col>
-                    </Row>
-                  </Col>
-                </Row>
+                <PersonagemTab data={data} />
               </Col>
             </Row>
           </Container>
