@@ -4,20 +4,16 @@ import Col from 'react-bootstrap/Col';
 
 import './FichaMagias.scss';
 
-const montarTabelaMagias = (magias) => {
-  return (
-    // TODO abrir um modal que mostra as infos
-    <tbody>
-      {magias.map((element) => {
-        return (
-          <tr>
-            <td>{element.nome}</td>
-          </tr>
-        );
-      })}
-    </tbody>
-  );
-};
+const montarTabelaMagias = (magias) => (
+  // TODO abrir um modal que mostra as infos
+  <tbody>
+    {magias.map((element) => (
+      <tr>
+        <td>{element.nome}</td>
+      </tr>
+    ))}
+  </tbody>
+);
 
 const fichaMagia = (props) => {
   if (props.magias.length > 0) {
@@ -35,9 +31,8 @@ const fichaMagia = (props) => {
         </Col>
       </Row>
     );
-  } else {
-    return <br />;
   }
+  return <br />;
 };
 
 export default fichaMagia;
