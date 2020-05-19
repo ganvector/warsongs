@@ -57,9 +57,9 @@ class Personagem(models.Model):
     def proficiencia(self):
         return math.ceil(1 + self.nivel_total / 4)
 
-    class Meta:
-        verbose_name_plural = 'personagens'
-        fields = ['nome', 'nivel']
+    # class Meta:
+    #     verbose_name_plural = 'personagens'
+    #     fields = ['nome', 'nivel']
 
     def __str__(self):
         return f'[Nome: {self.nome}] - [Nivel: {self.nivel_total}]- [Player: {self.jogador.username}] - [Campanha: {self.campanha.titulo}]'
