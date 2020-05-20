@@ -2,10 +2,18 @@ import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
+import PersonagemTabBody from './PersonagemTabBody/PersonagemTabBody';
+
 const personagemTab = (props) => (
   <Tabs defaultActiveKey="personagem" id="tab_info_personagem">
     <Tab eventKey="personagem" title="Personagem">
-      Perfil
+      <PersonagemTabBody
+        dadosDeVidaTotal={props.data.dadosDeVidaTotal}
+        dadosDeVidaAtual={props.data.dadosDeVidaAtual}
+        testeContraMorte={props.data.testeContraMorte}
+        atributoPontos={props.data.atributoPontos}
+        atributoModificador={props.data.atributoModificadores}
+      />
     </Tab>
     <Tab eventKey="pericias" title="Pericias">
       Pericias

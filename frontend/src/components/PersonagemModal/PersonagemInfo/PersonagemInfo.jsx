@@ -5,6 +5,7 @@ import Media from 'react-bootstrap/Media';
 
 import BarraDeVida from './BarraDeVida/BarraDeVida';
 import BarraDeExperiencia from './BarraDeExperiencia/BarraDeExperiencia';
+// import PersonagemBadges from './PersonagemBadges/PersonagemBadges';
 
 const personagemInfo = (props) => (
   <Row>
@@ -25,9 +26,8 @@ const personagemInfo = (props) => (
             <Col>{props.data.alinhamento}</Col>
           </Row>
           <Row>
+            <Col md={2}>Vida:</Col>
             <Col>
-              Vida: {props.data.pvAtual}-{props.data.pvMax} /{' '}
-              {props.data.pvTemp}
               <BarraDeVida
                 pvMax={props.data.pvMax}
                 pvAtual={props.data.pvAtual}
@@ -36,9 +36,8 @@ const personagemInfo = (props) => (
             </Col>
           </Row>
           <Row>
+            <Col md={2}>Experiência:</Col>
             <Col>
-              Experiencia: {props.data.experienciaAtual} /{' '}
-              {props.data.experienciaProxNivel}
               <BarraDeExperiencia
                 experienciaAtual={props.data.experienciaAtual}
                 experienciaProxNivel={props.data.experienciaProxNivel}
