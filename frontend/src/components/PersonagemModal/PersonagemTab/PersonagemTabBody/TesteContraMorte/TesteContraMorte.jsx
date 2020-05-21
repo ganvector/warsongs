@@ -18,23 +18,19 @@ const testeContraMorte = (props) => (
   <Row id="testeContraMorte">
     <Col>
       <Row>
-        <Col>
-          <Row>
-            <Col md={6}>
-              <label>SUCESSOS</label>
-            </Col>
-            {testes(props.testes.sucesso)}
-          </Row>
-          <Row>
-            <Col md={6}>
-              <label>FALHAS</label>
-            </Col>
-            {testes(props.testes.sucesso)}
-          </Row>
-        </Col>
+        <Col>TESTE CONTRA MORTE</Col>
       </Row>
       <Row>
-        <Col className="AtributoNome">TESTE CONTRA MORTE</Col>
+        <Col>
+          <Row>
+            <Col md={6}>SUCESSOS</Col>
+            {testes(props.testes.sucesso)}
+          </Row>
+          <Row>
+            <Col md={6}>FALHAS</Col>
+            {testes(props.testes.falhas)}
+          </Row>
+        </Col>
       </Row>
     </Col>
   </Row>

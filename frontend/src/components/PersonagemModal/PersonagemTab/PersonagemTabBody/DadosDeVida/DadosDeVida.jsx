@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -6,9 +6,9 @@ const dadosDeVida = (props) => (
   <Row id="dadosDeVida">
     <Col>
       <Row>
-        <Row>
-          <Col>DADOS DE VIDA</Col>
-        </Row>
+        <Col>DADOS DE VIDA</Col>
+      </Row>
+      <Row>
         <Col>Total:</Col>
         <Col>
           {props.dadosDeVidaTotal[0].qtd}

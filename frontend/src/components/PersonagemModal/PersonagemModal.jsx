@@ -136,7 +136,7 @@ const data = {
   ],
   testeContraMorte: {
     sucesso: 2,
-    falhas: 2,
+    falhas: 1,
   },
   ataques: [
     {

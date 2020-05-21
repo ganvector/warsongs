@@ -26,22 +26,34 @@ const personagemInfo = (props) => (
             <Col>{props.data.alinhamento}</Col>
           </Row>
           <Row>
-            <Col md={2}>Vida:</Col>
             <Col>
-              <BarraDeVida
-                pvMax={props.data.pvMax}
-                pvAtual={props.data.pvAtual}
-                pvTemp={props.data.pvTemp}
-              />
+              <Row>
+                <Col>
+                  <BarraDeVida
+                    pvMax={props.data.pvMax}
+                    pvAtual={props.data.pvAtual}
+                    pvTemp={props.data.pvTemp}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col>Vida</Col>
+              </Row>
             </Col>
           </Row>
           <Row>
-            <Col md={2}>Experiência:</Col>
             <Col>
-              <BarraDeExperiencia
-                experienciaAtual={props.data.experienciaAtual}
-                experienciaProxNivel={props.data.experienciaProxNivel}
-              />
+              <Row>
+                <Col>
+                  <BarraDeExperiencia
+                    experienciaAtual={props.data.experienciaAtual}
+                    experienciaProxNivel={props.data.experienciaProxNivel}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col md={2}>Experiência:</Col>
+              </Row>
             </Col>
           </Row>
           <Row>

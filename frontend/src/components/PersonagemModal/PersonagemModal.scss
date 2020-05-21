@@ -18,164 +18,16 @@ $break-uwide: 2560px;
   }
 }
 
-small {
-  font-weight: bold;
-}
-
-.AtributoBase {
-  text-align: center;
-  font-size: 40px;
-}
-
-.AtributoMod {
-  text-align: center;
-  font-size: 20px;
-}
-
-.AtributoNome {
-  text-align: center;
-  font-size: 13px;
-}
-
-.RowDescrPericias {
-  margin-top: 1px;
-  margin-bottom: 2.5px;
-  height: 24px;
-}
-
-.RowDescrPericias .ColBulletPericia {
+.Bullet {
   border-radius: 50%;
   width: 14px;
   height: 14px;
   border: 3px solid #000;
   margin-top: 5px;
-}
-
-.RowDescrPericias .ColModPericia {
-  margin-left: 3px;
   margin-right: 4px;
-  text-align: center;
+  margin-left: 4px;
 }
 
-.RowDescrPericias .ColNomePericia {
-  margin-left: 0px;
-  margin-right: 0px;
-  text-align: left;
-  margin-top: 2px;
-  font-size: 12px;
+.Filled {
+  background-color: black;
 }
-
-.LineDescription {
-  height: 55px;
-  margin-bottom: 10px;
-  border: 3px solid orange;
-
-  .AtributoMod {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
-    font-size: 24px;
-  }
-
-  .AtributoNome {
-    margin-top: 16px;
-    margin-bottom: auto;
-    margin-bottom: 10px;
-    vertical-align: middle;
-    font-size: 12px;
-  }
-}
-
-.RowFichaProficiencia {
-  height: 290px;
-  margin-top: 15px;
-  border: 3px solid orange;
-}
-
-.SecondColRow {
-  margin-top: 18px;
-  height: 100px;
-}
-
-.ca-ini-des {
-  border: 3px solid orange;
-  width: 30%;
-
-  .AtributoNome {
-    margin-top: 6px;
-    height: 36px;
-    font-size: 10px;
-  }
-
-  .AtributoBase {
-    font-size: 25px;
-  }
-}
-
-.ModalCol {
-  margin-left: 20px;
-  margin-right: 10px;
-}
-
-.PV-Atual {
-  border: 3px solid orange;
-  margin-top: 13px;
-  height: 123px;
-
-  .PV-Max {
-    font-size: 13px;
-  }
-
-  .AtributoBase {
-    height: 68px;
-  }
-}
-
-.PV-Temp {
-  border: 3px solid orange;
-  margin-top: 6px;
-  height: 100px;
-
-  .AtributoBase {
-    height: 70px;
-  }
-}
-
-.RowVidaMorte {
-  margin-top: 11px;
-  height: 100px;
-
-  .ColVida {
-    border: 3px solid orange;
-    margin-right: 3%;
-    margin-left: 2%;
-  }
-
-  .ColMorte {
-    border: 3px solid orange;
-    margin-right: 3%;
-    margin-left: 2%;
-
-    .AtributoNome {
-      font-size: 10px;
-    }
-  }
-}
-
-.RowAcoes {
-  border: 3px solid orange;
-  margin-top: 13px;
-  height: 410px;
-}
-
-// .red {
-//     background-color: red;
-// }
-
-// .blue {
-//     background-color: blue;
-// }
-
-// .green {
-//     background-color: green;
-// }
