@@ -68,46 +68,79 @@ const data = {
       valor: 13,
     },
   },
-  pericia_prof: {
-    acrobacia: false,
-    arcanismo: false,
-    atletismo: false,
-    atuacao: false,
-    blefar: false,
-    furtividade: false,
-    historia: false,
-    intimidacao: true,
-    intuicao: false,
-    investigacao: true,
-    lidarComAnimais: false,
-    medicina: false,
-    natureza: false,
-    percepcao: true,
-    persuasao: true,
-    prestidigitacao: true,
-    religiao: false,
-    sobrevivencia: true,
-  },
-
-  pericia_val: {
-    acrobacia: 2,
-    arcanismo: 0,
-    atletismo: 4,
-    atuacao: 5,
-    blefar: 5,
-    furtividade: 2,
-    historia: 0,
-    intimidacao: 13,
-    intuicao: 1,
-    investigacao: 8,
-    lidarComAnimais: 5,
-    medicina: 1,
-    natureza: 1,
-    percepcao: 9,
-    persuasao: 13,
-    prestidigitacao: 10,
-    religiao: 0,
-    sobrevivencia: 9,
+  pericias: {
+    acrobacia: {
+      proficiente: false,
+      valor: 2,
+    },
+    arcanismo: {
+      proficiente: false,
+      valor: 0,
+    },
+    atletismo: {
+      proficiente: false,
+      valor: 4,
+    },
+    atuacao: {
+      proficiente: false,
+      valor: 5,
+    },
+    blefar: {
+      proficiente: false,
+      valor: 5,
+    },
+    furtividade: {
+      proficiente: false,
+      valor: 2,
+    },
+    historia: {
+      proficiente: false,
+      valor: 0,
+    },
+    intimidacao: {
+      proficiente: true,
+      valor: 13,
+    },
+    intuicao: {
+      proficiente: true,
+      valor: 1,
+    },
+    investigacao: {
+      proficiente: true,
+      valor: 8,
+    },
+    adestrarAnimais: {
+      proficiente: false,
+      valor: 5,
+    },
+    medicina: {
+      proficiente: false,
+      valor: 1,
+    },
+    natureza: {
+      proficiente: false,
+      valor: 1,
+    },
+    percepcao: {
+      proficiente: true,
+      valor: 9,
+    },
+    persuasao: {
+      proficiente: true,
+      valor: 13,
+    },
+    prestidigitacao: {
+      proficiente: true,
+      valor: 10,
+    },
+    religiao: {
+      proficiente: false,
+      valor: 0,
+    },
+    sobrevivencia: {
+      proficiente: true,
+      valor: 9,
+    },
   },
   lstProficiencias: {
     idiomas: ['Comum', 'Elfico', 'Goblin'],
