@@ -42,21 +42,31 @@ const data = {
   },
   inspiracao: '0',
   proficiencia: '8',
-  teste_res: {
-    for: false,
-    des: false,
-    con: false,
-    int: false,
-    sab: true,
-    car: true,
-  },
-  teste_res_val: {
-    for: 4,
-    des: 2,
-    con: 3,
-    int: 0,
-    sab: 9,
-    car: 13,
+  teste_de_resistencia: {
+    forca: {
+      proficiente: false,
+      valor: 4,
+    },
+    destreza: {
+      proficiente: false,
+      valor: 2,
+    },
+    constituicao: {
+      proficiente: false,
+      valor: 3,
+    },
+    inteligencia: {
+      proficiente: false,
+      valor: 0,
+    },
+    sabedoria: {
+      proficiente: true,
+      valor: 9,
+    },
+    carisma: {
+      proficiente: true,
+      valor: 13,
+    },
   },
   pericia_prof: {
     acrobacia: false,
