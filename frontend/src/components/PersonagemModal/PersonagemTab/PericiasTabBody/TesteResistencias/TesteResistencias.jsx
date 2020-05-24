@@ -2,7 +2,19 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-// import {formatarValor, proficiente} from '~/'
+const proficiente = (valor) => {
+  if (valor) {
+    return <Col className="Bullet Filled" />;
+  }
+  return <Col className="Bullet" />;
+};
+
+const formatarValor = (valor) => {
+  if (valor >= 0) {
+    return <Col>+{valor}</Col>;
+  }
+  return <Col>-{valor}</Col>;
+};
 
 const testeResistencias = (props) => (
   <Row>
