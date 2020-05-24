@@ -249,3 +249,5 @@ yarn-error.log*
 # End of agit sthttps://www.gitignore.io/api/django,pycharm,visualstudiocode
 
 .env
+
+*.code-workspace
