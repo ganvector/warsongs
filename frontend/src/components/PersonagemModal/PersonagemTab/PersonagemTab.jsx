@@ -17,7 +17,10 @@ const personagemTab = (props) => (
       />
     </Tab>
     <Tab eventKey="pericias" title="Pericias">
-      <PericiasTabBody teste_res={props.data.teste_de_resistencia} />
+      <PericiasTabBody
+        teste_res={props.data.teste_de_resistencia}
+        pericias={props.data.pericias}
+      />
     </Tab>
     <Tab eventKey="acoes" title="Açoes">
       Pericias
