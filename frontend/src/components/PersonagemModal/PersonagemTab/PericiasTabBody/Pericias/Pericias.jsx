@@ -36,7 +36,7 @@ const pericias = (props) => (
               <Row>
                 {proficiente(props.pericias.investigacao.proficiente)}
                 <Col>{formatarValor(props.pericias.investigacao.valor)}</Col>
-                <Col>Investigação</Col>
+                <Col>Investigacão</Col>
               </Row>
             </Col>
           </Row>
