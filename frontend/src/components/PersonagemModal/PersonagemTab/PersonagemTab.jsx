@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 
 import PersonagemTabBody from './PersonagemTabBody/PersonagemTabBody';
 import PericiasTabBody from './PericiasTabBody/PericiasTabBody';
+import AcoesTabBody from './AcoesTabBody/AcoesTabBody';
 
 const personagemTab = (props) => (
   <Tabs defaultActiveKey="personagem" id="tab_info_personagem">
@@ -23,7 +24,7 @@ const personagemTab = (props) => (
       />
     </Tab>
     <Tab eventKey="acoes" title="Açoes">
-      Pericias
+      <AcoesTabBody />
     </Tab>
     <Tab eventKey="magias" title="Magias">
       Pericias
