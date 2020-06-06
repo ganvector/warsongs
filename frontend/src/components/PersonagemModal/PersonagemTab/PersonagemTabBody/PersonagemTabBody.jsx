@@ -13,12 +13,16 @@ const personagemTabBody = (props) => (
       <Row>
         <Col>
           <DadosDeVida
+            className="Marginado"
             dadosDeVidaTotal={props.dadosDeVidaTotal}
             dadosDeVidaAtual={props.dadosDeVidaAtual}
           />
         </Col>
         <Col>
-          <TesteContraMorte testes={props.testeContraMorte} />
+          <TesteContraMorte
+            className="Marginado"
+            testes={props.testeContraMorte}
+          />
         </Col>
       </Row>
       <Row id="PersonagemTabAtributos">

@@ -15,7 +15,7 @@ const testes = (values) => {
 };
 
 const testeContraMorte = (props) => (
-  <Row id="testeContraMorte">
+  <Row id="testeContraMorte" className={props.className}>
     <Col>
       <Row>
         <Col>TESTE CONTRA MORTE</Col>

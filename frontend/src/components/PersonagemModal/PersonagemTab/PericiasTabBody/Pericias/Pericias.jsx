@@ -17,7 +17,7 @@ const formatarValor = (valor) => {
 };
 // TODO classificar as pericias por ordem afabetica
 const pericias = (props) => (
-  <Row>
+  <Row className={props.className}>
     <Col>
       <Row>
         <Col>Pericias</Col>

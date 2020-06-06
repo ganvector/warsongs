@@ -181,36 +181,221 @@ const data = {
     sucesso: 2,
     falhas: 1,
   },
-  ataques: [
-    {
-      nome: 'Adaga',
-      alcance: { tipo: 'corpo a corpo' },
-      propriedades: {
-        municao: false,
-        alcance: 'Corpo a corpo',
-        tipo: 'Uma mão',
+  equipamento: {
+    armas: [
+      {
+        tipo: 'Simples',
+        nome: 'Adaga',
+        dano: '1d4+2',
+        acerto: '+10',
+        tipoDano: 'perfurante',
+        propriedades: 'Acuidade, leve, arremeço (distância 6/18)',
+        alcance: '1.5m',
+        peso: 0.5,
+        preco: {
+          pl: 0,
+          po: 2,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        equipado: true,
+        qtd: 2,
       },
-      acerto: '+4',
-      dano: '1d4+2 Cortante',
-    },
-    {
-      nome: 'Besta Leve',
-      propriedades: {
-        municao: 19,
-        alcance: 'Distância (24/96m)',
-        tipo: 'Duas Mãos',
+      {
+        tipo: 'Simples',
+        nome: 'Besta leve',
+        dano: '1d8+2',
+        acerto: '+10',
+        tipoDano: 'perfurante',
+        propriedades: 'Munição (distância 24/96), recarga, duas mãos',
+        alcance: 'Distância',
+        peso: 2.5,
+        preco: {
+          pl: 0,
+          po: 25,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        equipado: true,
+        qtd: 1,
       },
-      acerto: '+4',
-      dano: '1d8+2 Perfurante',
+    ],
+    armaduras: [
+      {
+        nome: 'Couro Batido',
+        tipo: 'Armadura Leve',
+        classeDeArmadura: 12,
+        propriedades: 'Modificador de destreza',
+        forcaMinima: 0,
+        furtividade: null,
+        peso: 6.5,
+        preco: {
+          pl: 0,
+          po: 25,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        equipado: true,
+        qtd: 1,
+      },
+    ],
+    itens: [
+      {
+        nome: 'Mochila',
+        preco: {
+          pl: 0,
+          po: 2,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        peso: 2.5,
+        qtd: 1,
+      },
+      {
+        nome: 'Livro de estudo',
+        preco: {
+          pl: 0,
+          po: 25,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        peso: 2.5,
+        qtd: 1,
+      },
+      {
+        nome: 'Tinta (frasco de 30ml)',
+        preco: {
+          pl: 0,
+          po: 10,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        peso: 0,
+        qtd: 1,
+      },
+      {
+        nome: 'Caneta tinteiro',
+        preco: {
+          pl: 0,
+          po: 25,
+          pe: 0,
+          pp: 0,
+          pc: 2,
+        },
+        peso: 0,
+        qtd: 1,
+      },
+      {
+        nome: 'Folha de Pergaminho',
+        preco: {
+          pl: 0,
+          po: 0,
+          pe: 0,
+          pp: 1,
+          pc: 0,
+        },
+        peso: 0,
+        qtd: 10,
+      },
+      {
+        nome: 'Saquinho de areia',
+        preco: {
+          pl: 0,
+          po: 25,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        peso: 2.5,
+        qtd: 1,
+      },
+      {
+        nome: 'Pequena faca',
+        preco: {
+          pl: 0,
+          po: 0,
+          pe: 0,
+          pp: 0,
+          pc: 0,
+        },
+        peso: 0,
+        qtd: 1,
+      },
+    ],
+  },
+  acoes: { // TODO refazer essa parte
+    acoes: {
+      ataques: [
+        {
+          nome: 'Adaga',
+          dano: '1d4+2',
+          acerto: '+10',
+          tipoDano: 'perfurante',
+          propriedades: 'Acuidade, leve, arremeço (distância 6/18)',
+          alcance: ['1.5'],
+        },
+        {
+          nome: 'Besta leve',
+          dano: '1d8+2',
+          acerto: '+10',
+          tipoDano: 'perfurante',
+          propriedades: 'Munição (distância 24/96), recarga, duas mãos',
+          alcance: ['24', '96'],
+        },
+        {
+          nome: 'Machado de Batalha',
+          dano: '1d10+2',
+          acerto: '+10',
+          tipoDano: 'perfurante',
+          propriedades: 'Munição (distância 24/96), recarga, duas mãos',
+          alcance: ['180', '180'],
+        }
+      ],
+      habilidades: [
+        {nome: 'Criar arma do pacto', descricao: 'Como uma ação, você cria uma arma de pacto em sua mão vazia (você escolhe a forma e é proficiente com ela enquanto a empunhar, e ela conta como sendo magica) Você pode transformar uma arma magica em sa arma de pacto realizando um ritual especial.'},
+        {nome: 'Interagir com objeto', descricao: 'Interagir com objeto'}
+      ],
+      magias: [
+        {
+          nome: 'Toque Chocante',
+          alcance: ['1.5'],
+          acerto: '+7',
+          dano: '1d8',
+          tipoDano: 'elétrico',
+          propriedades: '(distancia 1.5m)'
+        },
+        {
+          nome: 'Toque Arrepiante',
+          alcance: ['20'],
+          acerto: '+7',
+          dano: '4d8',
+          tipoDano: 'necrótico',
+          propriedades: 'Quadrado 5/5m'
+        }
+      ]
     },
-  ],
+    acoesBonus: {
+      ataques: [],
+      habilidades: [],
+    },
+    reacoes: { ataques: [], habilidades: [] },
+    outros: {
+      habilidades: [],
+    },
+  },
   magias: [
     {
       nome: 'Bruxaria',
       preparada: true,
       nivel: '1',
       escola: 'Evocação',
-      tempoConjuracao: '1 ação bonus',
+      tempoConjuracao: 'BA',
       alcance: '18 metros',
       componentes: 'V S M (olho petrificado de tritão',
       duracao: 'Concentração, até 1 hora',
@@ -221,7 +406,7 @@ const data = {
       nome: 'Toque Chocante',
       nivel: 'Truque',
       escola: 'Evocação',
-      tempoConjuracao: '1 ação',
+      tempoConjuracao: 'A',
       alcance: 'Toque',
       componentes: 'V S',
       duracao: 'instantâneo',
@@ -247,15 +432,15 @@ class PersonagemModal extends Component {
         dialogClassName="Modal90w"
         onHide={this.handleClose}
       >
-        <Modal.Header closeButton>
+        <Modal.Header className="Marginado" closeButton>
           <Modal.Title>{data.nome}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="Marginado background">
           <Container>
-            <PersonagemInfo data={data} />
+            <PersonagemInfo className="alinhamento-cb" data={data}/>
             <Row style={{ 'margin-top': '15px' }}>
               <Col>
-                <PersonagemTab data={data} />
+                <PersonagemTab data={data}/>
               </Col>
             </Row>
           </Container>

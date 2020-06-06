@@ -8,7 +8,7 @@ import BarraDeExperiencia from './BarraDeExperiencia/BarraDeExperiencia';
 // import PersonagemBadges from './PersonagemBadges/PersonagemBadges';
 
 const personagemInfo = (props) => (
-  <Row>
+  <Row className={props.className}>
     <Col>
       <Media>
         <img

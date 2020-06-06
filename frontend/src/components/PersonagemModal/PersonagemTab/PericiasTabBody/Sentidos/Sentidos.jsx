@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const sentidos = (props) => (
-  <Row>
+  <Row className={props.className}>
     <Col>
       <Row>Sentidos</Row>
       <Row>

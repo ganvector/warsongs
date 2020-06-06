@@ -17,7 +17,7 @@ const formatarValor = (valor) => {
 };
 
 const testeResistencias = (props) => (
-  <Row>
+  <Row className={props.className}>
     <Col>
       <Row>
         <Col>Testes de Resistênca</Col>

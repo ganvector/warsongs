@@ -2,6 +2,28 @@ $break-hd: 1366px;
 $break-fhd: 1920px;
 $break-uwide: 2560px;
 
+// Alinhamentos cores
+$alinhamento-cb: #d70505;
+$alinhamento-cn: #8a0303;
+$alinhamento-cm: #580202;
+$alinhamento-lb: #0505d7;
+$alinhamento-ln: #03038a;
+$alinhamento-lm: #020258;
+$alinhamento-nb: #6c6c6c;
+$alinhamento-nn: #515151;
+$alinhamento-nm: #252525;
+
+$primary: #bb86fc;
+$secondary: #03dac6;
+$background: #121212;
+$surface: #121212;
+$error: #cf6679;
+$on-primary: #000;
+$on-secondary: #000;
+$on-background: #fff;
+$on-surface: #fff;
+$on-error: #000;
+
 .Modal90w {
   max-width: none !important;
 
@@ -30,4 +52,20 @@ $break-uwide: 2560px;
 
 .Filled {
   background-color: black;
+}
+
+// TODO remover isso ou implementar alog mais elegante
+.Marginado {
+  color: $on-background;
+  background-color: #1f1b24;
+  border: 1px solid black;
+  margin: 2px 2px 2px 2px;
+}
+
+.background {
+  background-color: $background;
+}
+
+.alinhamento-db {
+  background-color: red;
 }

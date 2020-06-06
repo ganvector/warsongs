@@ -9,9 +9,10 @@ import Sentidos from './Sentidos/Sentidos';
 const periciasTabBody = (props) => (
   <Row>
     <Col>
-      <TesteResistencias teste_res={props.teste_res} />
-      <Pericias pericias={props.pericias} />
+      <TesteResistencias className="Marginado" teste_res={props.teste_res} />
+      <Pericias className="Marginado" pericias={props.pericias} />
       <Sentidos
+        className="Marginado"
         percepcao={props.pericias.percepcao}
         investigacao={props.pericias.investigacao}
         intuicao={props.pericias.intuicao}
