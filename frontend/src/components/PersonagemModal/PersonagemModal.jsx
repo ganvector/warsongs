@@ -405,9 +405,34 @@ const data = {
         }
       ]
     },
-    reacoes: { ataques: [], habilidades: [] },
+    reacoes: {
+      ataques: [
+        {
+          nome: 'Defletir Ataques com Projeteis',
+          dano: '1d4+2',
+          acerto: '+8',
+          tipoDano: 'defletir',
+          propriedades: '',
+          alcance: ['6', '18']
+        }
+      ],
+      habilidades: [
+        { nome: 'Defletir Projeteis', descricao: 'Você pode usar sua reação para defletir ou aparar o projeto quando você é atingido por um ataque de arma a distancia.'}
+      ],
+      magias: [] },
     outros: {
-      habilidades: [],
+      habilidades: [
+        { nome: 'Surto de habilidade', descricao: 'Voce pode usar sua ação novamente em seu turno. Usa-se uma vez por descanso curto.' },
+      ], magias: [
+        {
+          nome: 'Pergaminho Ilusori',
+          alcance: ['1.5'],
+          acerto: '+7',
+          dano: '1d8',
+          tipoDano: 'elétrico',
+          propriedades: '(distancia 1.5m)'
+        },
+      ]
     },
   },
   magias: [

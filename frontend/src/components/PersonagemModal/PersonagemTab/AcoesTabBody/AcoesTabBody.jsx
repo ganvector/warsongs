@@ -6,6 +6,9 @@ import Tab from 'react-bootstrap/Tab';
 
 import AcoesAcoes from './AcoesAcoes/AcoesAcoes';
 import AcoesBonus from './AcoesBonus/AcoesBonus';
+import AcoesReacoes from './AcoesReacoes/AcoesReacoes';
+import AcoesOutros from './AcoesOutros/AcoesOutros';
+
 const acoesTabBody = (props) => (
   <Row>
     <Col>
@@ -45,9 +48,20 @@ const acoesTabBody = (props) => (
                   <Row>
                     <Col>Ataques de oportunidade.</Col>
                   </Row>
+                  <AcoesReacoes acoes={props.acoes.reacoes}/>
                 </Tab>
                 <Tab eventKey="outros" title="Outros">
-                  outros
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Col><strong>Ações em combate</strong></Col>
+                      </Row>
+                      <Row>
+                        <Col>Interagir com um objeto</Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <AcoesOutros acoes={props.acoes.outros} />
                 </Tab>
               </Tabs>
             </Col>
