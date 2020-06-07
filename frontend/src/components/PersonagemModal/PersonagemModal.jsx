@@ -381,8 +381,29 @@ const data = {
       ]
     },
     acoesBonus: {
-      ataques: [],
-      habilidades: [],
+      ataques: [
+        {
+          nome: 'Ataque desarmado',
+          dano: '1d4+2',
+          acerto: '+10',
+          tipoDano: 'concussão',
+          propriedades: '',
+          alcance: ['1.5']
+        }
+      ],
+      habilidades: [
+        {nome: 'Rajada de Golpes', descricao: 'Depois de realizar um atque bem sucedido no seu turno você pode gastar um 1 ponto de ki para realizar dois ataques desarmados com uma ação bonus'},
+      ],
+      magias: [
+        {
+          nome: 'Bruxaria',
+          alcance: ['18'],
+          acerto: 'SAB 16',
+          dano: '',
+          tipoDano: 'Amaldiçoado',
+          propriedades: 'Quadrado 5/5m'
+        }
+      ]
     },
     reacoes: { ataques: [], habilidades: [] },
     outros: {

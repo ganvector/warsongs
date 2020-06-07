@@ -5,7 +5,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
 import AcoesAcoes from './AcoesAcoes/AcoesAcoes';
-
+import AcoesBonus from './AcoesBonus/AcoesBonus';
 const acoesTabBody = (props) => (
   <Row>
     <Col>
@@ -34,7 +34,7 @@ const acoesTabBody = (props) => (
                   <AcoesAcoes acoes={props.acoes.acoes} />
                 </Tab>
                 <Tab eventKey="acao_bonus" title="Ação Bônus">
-                  Ação Bonus
+                  <AcoesBonus acoes={props.acoes.acoesBonus} />
                 </Tab>
                 <Tab eventKey="reacao" title="Reação">
                   <Row>
