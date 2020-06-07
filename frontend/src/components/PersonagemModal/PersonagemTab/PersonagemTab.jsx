@@ -6,6 +6,7 @@ import PersonagemTabBody from './PersonagemTabBody/PersonagemTabBody';
 import PericiasTabBody from './PericiasTabBody/PericiasTabBody';
 import AcoesTabBody from './AcoesTabBody/AcoesTabBody';
 import MagiasTabBody from './MagiasTabBody/MagiasTabBody';
+import EquipamentosTabBody from './EquipamentosTabBody/EquipamentosTabBody';
 
 const personagemTab = (props) => (
   <Tabs defaultActiveKey="personagem" id="tab_info_personagem">
@@ -31,7 +32,7 @@ const personagemTab = (props) => (
       <MagiasTabBody conjuracao={props.data.conjuracao} />
     </Tab>
     <Tab eventKey="equipamento" title="Equipamento">
-      Pericias
+      <EquipamentosTabBody itens={props.data.equipamento}/>
     </Tab>
     <Tab eventKey="caracteristicas" title="Caracteristicas">
       Pericias

@@ -184,7 +184,7 @@ const data = {
   equipamento: {
     armas: [
       {
-        tipo: 'Simples',
+        tipo: 'Arma Simples',
         nome: 'Adaga',
         dano: '1d4+2',
         acerto: '+10',
@@ -203,7 +203,7 @@ const data = {
         qtd: 2,
       },
       {
-        tipo: 'Simples',
+        tipo: 'Arma Simples',
         nome: 'Besta leve',
         dano: '1d8+2',
         acerto: '+10',
