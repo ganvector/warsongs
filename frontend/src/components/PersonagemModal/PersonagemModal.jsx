@@ -435,31 +435,56 @@ const data = {
       ]
     },
   },
-  magias: [
-    {
-      nome: 'Bruxaria',
-      preparada: true,
-      nivel: '1',
-      escola: 'Evocação',
-      tempoConjuracao: 'BA',
-      alcance: '18 metros',
-      componentes: 'V S M (olho petrificado de tritão',
-      duracao: 'Concentração, até 1 hora',
-      descricao:
-        'Você coloca uma maldição em uma criatura que você possa ver, dentro do alcance. Até a magia acabar, você causa 1d6 de dano necrótico extra no alvo sempre que atingi-lo com um ataque. Além disso, escolha uma habilidade quando você conjurar a magia. O alvo tem desvantagem em testes de habilidade feitos com a habilidade escolhida.\nSe o alvo cair a 0 pontos de vida antes da magia acabar, você pode usar uma ação bônus, no seu turno subsequente para amaldiçoar outra criatura.\nUma magia remover maldição conjurada no alvo acaba com a magia prematuramente.\nEm Níveis Superiores. Quando você conjurar essa magia usando um espaço de magia de 3° ou 4° nível, você poderá manter sua concentração na magia por até 8 horas. Quando você usar um espaço de magia de 5° nível ou superior, você poderá manter sua concentração na magia por até 24 horas.',
-    },
-    {
-      nome: 'Toque Chocante',
-      nivel: 'Truque',
-      escola: 'Evocação',
-      tempoConjuracao: 'A',
-      alcance: 'Toque',
-      componentes: 'V S',
-      duracao: 'instantâneo',
-      descricao:
-        'Eletricidade surge da sua mão para transmitir um choque em uma criatura que você tentar tocar. Faça um ataque corpo-a-corpo com magia contra o alvo. Você tem vantagem na jogada de ataque se o alvo estiver vestindo qualquer armadura de metal. Se atingir, o alvo sofre 1d8 de dano elétrico e não pode usar reações até o início do próximo turno dele.\nO dano da magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8).',
-    },
-  ],
+  conjuracao: {
+    habilidades: [
+      {
+        fonte: 'Bruxo',
+        modificador: '+1',
+        ataque: '+7',
+        salvamento: '15'
+      }
+    ],
+    espacosDeMagia: [
+      { nv1: 3 }
+    ],
+    magias: {
+      nv0: [
+        {
+          nome: 'Toque Chocante',
+          escola: 'Evocação',
+          tempoConjuracao: 'A',
+          alcance: 'Toque',
+          componentes: 'V S',
+          duracao: 'instantâneo',
+          descricao:
+            'Eletricidade surge da sua mão para transmitir um choque em uma criatura que você tentar tocar. Faça um ataque corpo-a-corpo com magia contra o alvo. Você tem vantagem na jogada de ataque se o alvo estiver vestindo qualquer armadura de metal. Se atingir, o alvo sofre 1d8 de dano elétrico e não pode usar reações até o início do próximo turno dele.\nO dano da magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8).',
+        }
+      ],
+      nv1: [
+        {
+          nome: 'Bruxaria',
+          preparada: true,
+          escola: 'Evocação',
+          tempoConjuracao: 'AB',
+          alcance: '18 metros',
+          componentes: 'V S M (olho petrificado de tritão',
+          duracao: 'Concentração, até 1 hora',
+          descricao:
+            'Você cloca uma maldição em uma criatura que você possa ver, dentro do alcance. Até a magia acabar, você causa 1d6 de dano necrótico extra no alvo sempre que atingi-lo com um ataque. Além disso, escolha uma habilidade quando você conjurar a magia. O alvo tem desvantagem em testes de habilidade feitos com a habilidade escolhida.\nSe o alvo cair a 0 pontos de vida antes da magia acabar, você pode usar uma ação bônus, no seu turno subsequente para amaldiçoar outra criatura.\nUma magia remover maldição conjurada no alvo acaba com a magia prematuramente.\nEm Níveis Superiores. Quando você conjurar essa magia usando um espaço de magia de 3° ou 4° nível, você poderá manter sua concentração na magia por até 8 horas. Quando você usar um espaço de magia de 5° nível ou superior, você poderá manter sua concentração na magia por até 24 horas.',
+        },
+        {
+          nome: 'Pergaminho Ilusorio',
+          preparada: true,
+          escola: 'Ilusão',
+          tempoConjuracao: '1m',
+          alcance: 'Toque',
+          componentes: 'V S M (tinta a base de chumbo que valha pelo menos 10 PO, consumida pelo feitiço',
+          duracao: '10 Dias',
+          descricao: 'Você escreve em um pergaminho, papel ou qualquer outro material adequado e tinge ele com uma poderosa ilusão que permanece pela duração.\nPara você e para qualquer criatura que você designar quando você conjura essa magia, a escrita parece normal, escrita com a sua caligrafia e transmite qualquer que seja a mensagem que você desejava quando escreveu o texto. Para todos os outros, a escrita aparece como se tivesse sido escrita com uma caligrafia desconhecida ou mágica que é inteligível. Alternativamente, você pode fazer a escrita parecer uma mensagem totalmente diferente, escrita com uma caligrafia e idioma diferentes, apesar de o idioma precisar ser um que você conheça.\\nNo caso da magia ser dissipada, tanto a escrita original quanto a ilusória desaparecem.\\nUma criatura com visão verdadeira pode ler a mensagem escondida.'
+        }
+      ]
+    }
+  }
 };
 
 class PersonagemModal extends Component {
