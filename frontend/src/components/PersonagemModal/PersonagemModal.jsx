@@ -14,13 +14,57 @@ const data = {
     'https://66.media.tumblr.com/50d79afb983692a4bd0f6edb17239d23/tumblr_papmsfljGX1r14dt9o2_250.png',
   nome: 'Milliardo',
   classes: [
-    { nome: 'Bruxo', nivel: '15' },
-    { nome: 'Guerreiro', nivel: '5' },
+    {
+      nome: 'Bruxo',
+      nivel: '15',
+      caracteristicas: [
+        {
+          nome: 'Patrono Transcedental: Hexblade',
+          descricao: 'Voce fez seu pacto com uma misteriosa figura de Shadowfell - uma força que se manifesta por armas inteligentes dotadas do material de sombras.'
+        },
+        {
+          nome: 'Maldição do Hexblade',
+          descricao: 'Você ganha a habilidade de colocar uma maldição em alguem. Como uma ação bonus , escolha uma criatura dentro de 9 metros de você. O alvo esta amaldiçoado por 1 minuto. A maldição termina antecipadamente se o alvo morrer, você morrer, ou você está incapacitado.'
+        },
+      ] },
+    { nome: 'Guerreiro',
+      nivel: '5',
+      caracteristicas: [
+        {
+          nome: 'Estilo de Luta: Duelismo',
+          descricao: 'Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.'
+        },
+        {
+          nome: 'Retomar o Fôlego',
+          descricao: 'Você possui uma reserva de estamina e pode usa-la ara proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.\nUma vez que você use essa caracteristica, você precisa terminar um descanso curto ou longo para usá-la de novo.'
+        }
+      ] },
   ],
   antecedente: 'Héroi Renegado',
   alinhamento: 'Caotico Bom',
   playerName: 'Vitor',
-  raca: { nome: 'Meio-Elfo' },
+  raca: {
+    nome: 'Meio-Elfo',
+    caracteristicas: [
+      {
+        nome: 'Visão no escuro',
+        descricao: 'Você pode ver na escuridão (tons de escuro) até 18 metros'
+      },
+      {
+        nome: 'Ancestralidade Feérica',
+        descricao: 'Você tem vantagem em saves contra ser encantado, e magica não pode colocar você para dormir'
+      },
+      {
+        nome: 'Versatilidade de habilidades',
+        descricao: 'Você ganha proficiencia em duas pericias da sua escola. (Natureza e Investigação)'
+      }
+    ] },
+  talentos: [
+    {
+      nome: 'Sortudo',
+      descricao: 'Você possui 3 pontos de sorte. Sempre que fizer uma jogada de ataque, teste de habilidade, ou jogada de salvamento, você pose gastar um ponto de sorte para rolar um d20 adicional. '
+    }
+  ],
   tendencia: 'CB',
   experienciaAtual: 8000,
   experienciaProxNivel: 10000,
