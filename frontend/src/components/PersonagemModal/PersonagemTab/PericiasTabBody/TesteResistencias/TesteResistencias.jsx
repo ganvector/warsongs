@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col';
 
 const proficiente = (valor) => {
   if (valor) {
-    return <Col className="Bullet Filled" />;
+    return (<Col><div className="Bullet Filled"/></Col>);
   }
-  return <Col className="Bullet" />;
+  return (<Col><div className="Bullet"/></Col>);
 };
 
 const formatarValor = (valor) => {

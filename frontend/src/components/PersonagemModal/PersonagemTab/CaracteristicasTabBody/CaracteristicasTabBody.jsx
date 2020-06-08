@@ -17,7 +17,7 @@ const caracteristicasTabBody = (props) => {
   return (
     <Row>
       <Col>
-        oi
+        <circle fill="#383838" x={5} y={5}></circle>
       </Col>
     </Row>
   );
