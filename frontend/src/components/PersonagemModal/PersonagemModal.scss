@@ -69,3 +69,45 @@ $on-error: #000;
 .alinhamento-db {
   background-color: red;
 }
+
+
+.SegmentTitle {
+  color: red;
+}
+
+.PersonagemTab {}
+.PericiasTab {}
+.AcoesTab {}
+.MagiasTab {}
+.EquipamentoTab {}
+.CaracteristicasTab {
+  font-size: 13px;
+
+  .CaracteristicaTitulo {
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 13px;
+  }
+
+  .CaractesticaClasseTitulo {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 13px;
+  }
+
+  .CaracteristicaNome {
+    font-weight: 700;
+    margin-bottom: 13px;
+
+  }
+
+  .CaracteristicaDescricao {
+    font-size: 12px;
+    margin-bottom: 13px;
+    margin-left: 8px;
+  }
+
+  .CaracteristicaObservacao{
+    margin-bottom: 13px;
+  }
+}
