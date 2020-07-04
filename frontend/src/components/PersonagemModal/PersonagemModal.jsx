@@ -18,52 +18,77 @@ const data = {
       nome: 'Bruxo',
       nivel: '15',
       caracteristicas: [
+        { nome: 'Dado de Vida', descricao: 'D8' },
+        {
+          nome: 'Proficiências',
+          descricao: ['sharbble', 'armas curtas', 'magias'],
+        },
         {
           nome: 'Patrono Transcedental: Hexblade',
-          descricao: 'Voce fez seu pacto com uma misteriosa figura de Shadowfell - uma força que se manifesta por armas inteligentes dotadas do material de sombras.'
+          descricao:
+            'Voce fez seu pacto com uma misteriosa figura de Shadowfell - uma força que se manifesta por armas inteligentes dotadas do material de sombras.',
         },
         {
           nome: 'Maldição do Hexblade',
-          descricao: 'Você ganha a habilidade de colocar uma maldição em alguem. Como uma ação bonus , escolha uma criatura dentro de 9 metros de você. O alvo esta amaldiçoado por 1 minuto. A maldição termina antecipadamente se o alvo morrer, você morrer, ou você está incapacitado.'
+          descricao:
+            'Você ganha a habilidade de colocar uma maldição em alguem. Como uma ação bonus , escolha uma criatura dentro de 9 metros de você. O alvo esta amaldiçoado por 1 minuto. A maldição termina antecipadamente se o alvo morrer, você morrer, ou você está incapacitado.',
         },
-      ] },
-    { nome: 'Guerreiro',
+      ],
+    },
+    {
+      nome: 'Guerreiro',
       nivel: '5',
       caracteristicas: [
         {
+          nome: 'Dado de Vida', descricao: '1D10'
+        },
+        {
+          nome: 'Proficiências', descricao: ['todas as armas']
+        },
+        {
           nome: 'Estilo de Luta: Duelismo',
-          descricao: 'Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.'
+          descricao:
+            'Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.',
         },
         {
           nome: 'Retomar o Fôlego',
-          descricao: 'Você possui uma reserva de estamina e pode usa-la ara proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.\nUma vez que você use essa caracteristica, você precisa terminar um descanso curto ou longo para usá-la de novo.'
-        }
-      ] },
+          descricao:
+            'Você possui uma reserva de estamina e pode usa-la ara proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.\nUma vez que você use essa caracteristica, você precisa terminar um descanso curto ou longo para usá-la de novo.',
+        },
+      ],
+    },
   ],
   antecedente: 'Héroi Renegado',
   alinhamento: 'Caotico Bom',
-  playerName: 'Vitor',
+  player: {
+    name: 'Vitor',
+    id: '123456'
+  },
   raca: {
     nome: 'Meio-Elfo',
     caracteristicas: [
       {
-        nome: 'Visão no escuro',
-        descricao: 'Você pode ver na escuridão (tons de escuro) até 18 metros'
+        nome: 'Visão no escur',
+        descricao: 'Você pode ver na escuridão (tons de escuro) até 18 metros',
       },
       {
         nome: 'Ancestralidade Feérica',
-        descricao: 'Você tem vantagem em saves contra ser encantado, e magica não pode colocar você para dormir'
+        descricao:
+          'Você tem vantagem em saves contra ser encantado, e magica não pode colocar você para dormir',
       },
       {
         nome: 'Versatilidade de habilidades',
-        descricao: 'Você ganha proficiencia em duas pericias da sua escola. (Natureza e Investigação)'
-      }
-    ] },
+        descricao:
+          'Você ganha proficiencia em duas pericias da sua escola. (Natureza e Investigação)',
+      },
+    ],
+  },
   talentos: [
     {
       nome: 'Sortudo',
-      descricao: 'Você possui 3 pontos de sorte. Sempre que fizer uma jogada de ataque, teste de habilidade, ou jogada de salvamento, você pose gastar um ponto de sorte para rolar um d20 adicional. '
-    }
+      descricao:
+        'Você possui 3 pontos de sorte. Sempre que fizer uma jogada de ataque, teste de habilidade, ou jogada de salvamento, você pose gastar um ponto de sorte para rolar um d20 adicional. ',
+    },
   ],
   tendencia: 'CB',
   experienciaAtual: 8000,
@@ -373,7 +398,8 @@ const data = {
       },
     ],
   },
-  acoes: { // TODO refazer essa parte
+  acoes: {
+    // TODO refazer essa parte
     acoes: {
       ataques: [
         {
@@ -399,11 +425,15 @@ const data = {
           tipoDano: 'perfurante',
           propriedades: 'Munição (distância 24/96), recarga, duas mãos',
           alcance: ['180', '180'],
-        }
+        },
       ],
       habilidades: [
-        {nome: 'Criar arma do pacto', descricao: 'Como uma ação, você cria uma arma de pacto em sua mão vazia (você escolhe a forma e é proficiente com ela enquanto a empunhar, e ela conta como sendo magica) Você pode transformar uma arma magica em sa arma de pacto realizando um ritual especial.'},
-        {nome: 'Interagir com objeto', descricao: 'Interagir com objeto'}
+        {
+          nome: 'Criar arma do pacto',
+          descricao:
+            'Como uma ação, você cria uma arma de pacto em sua mão vazia (você escolhe a forma e é proficiente com ela enquanto a empunhar, e ela conta como sendo magica) Você pode transformar uma arma magica em sa arma de pacto realizando um ritual especial.',
+        },
+        { nome: 'Interagir com objeto', descricao: 'Interagir com objeto' },
       ],
       magias: [
         {
@@ -412,7 +442,7 @@ const data = {
           acerto: '+7',
           dano: '1d8',
           tipoDano: 'elétrico',
-          propriedades: '(distancia 1.5m)'
+          propriedades: '(distancia 1.5m)',
         },
         {
           nome: 'Toque Arrepiante',
@@ -420,9 +450,9 @@ const data = {
           acerto: '+7',
           dano: '4d8',
           tipoDano: 'necrótico',
-          propriedades: 'Quadrado 5/5m'
-        }
-      ]
+          propriedades: 'Quadrado 5/5m',
+        },
+      ],
     },
     acoesBonus: {
       ataques: [
@@ -432,11 +462,15 @@ const data = {
           acerto: '+10',
           tipoDano: 'concussão',
           propriedades: '',
-          alcance: ['1.5']
-        }
+          alcance: ['1.5'],
+        },
       ],
       habilidades: [
-        {nome: 'Rajada de Golpes', descricao: 'Depois de realizar um atque bem sucedido no seu turno você pode gastar um 1 ponto de ki para realizar dois ataques desarmados com uma ação bonus'},
+        {
+          nome: 'Rajada de Golpes',
+          descricao:
+            'Depois de realizar um atque bem sucedido no seu turno você pode gastar um 1 ponto de ki para realizar dois ataques desarmados com uma ação bonus',
+        },
       ],
       magias: [
         {
@@ -445,9 +479,9 @@ const data = {
           acerto: 'SAB 16',
           dano: '',
           tipoDano: 'Amaldiçoado',
-          propriedades: 'Quadrado 5/5m'
-        }
-      ]
+          propriedades: 'Quadrado 5/5m',
+        },
+      ],
     },
     reacoes: {
       ataques: [
@@ -457,26 +491,36 @@ const data = {
           acerto: '+8',
           tipoDano: 'defletir',
           propriedades: '',
-          alcance: ['6', '18']
-        }
+          alcance: ['6', '18'],
+        },
       ],
       habilidades: [
-        { nome: 'Defletir Projeteis', descricao: 'Você pode usar sua reação para defletir ou aparar o projeto quando você é atingido por um ataque de arma a distancia.'}
+        {
+          nome: 'Defletir Projeteis',
+          descricao:
+            'Você pode usar sua reação para defletir ou aparar o projeto quando você é atingido por um ataque de arma a distancia.',
+        },
       ],
-      magias: [] },
+      magias: [],
+    },
     outros: {
       habilidades: [
-        { nome: 'Surto de habilidade', descricao: 'Voce pode usar sua ação novamente em seu turno. Usa-se uma vez por descanso curto.' },
-      ], magias: [
+        {
+          nome: 'Surto de habilidade',
+          descricao:
+            'Voce pode usar sua ação novamente em seu turno. Usa-se uma vez por descanso curto.',
+        },
+      ],
+      magias: [
         {
           nome: 'Pergaminho Ilusori',
           alcance: ['1.5'],
           acerto: '+7',
           dano: '1d8',
           tipoDano: 'elétrico',
-          propriedades: '(distancia 1.5m)'
+          propriedades: '(distancia 1.5m)',
         },
-      ]
+      ],
     },
   },
   conjuracao: {
@@ -485,12 +529,10 @@ const data = {
         fonte: 'Bruxo',
         modificador: '+1',
         ataque: '+7',
-        salvamento: '15'
-      }
+        salvamento: '15',
+      },
     ],
-    espacosDeMagia: [
-      { nv1: 3 }
-    ],
+    espacosDeMagia: [{ nv1: 3 }],
     magias: {
       nv0: [
         {
@@ -502,7 +544,7 @@ const data = {
           duracao: 'instantâneo',
           descricao:
             'Eletricidade surge da sua mão para transmitir um choque em uma criatura que você tentar tocar. Faça um ataque corpo-a-corpo com magia contra o alvo. Você tem vantagem na jogada de ataque se o alvo estiver vestindo qualquer armadura de metal. Se atingir, o alvo sofre 1d8 de dano elétrico e não pode usar reações até o início do próximo turno dele.\nO dano da magia aumenta em 1d8 quando você alcança o 5° nível (2d8), 11° nível (3d8) e 17° nível (4d8).',
-        }
+        },
       ],
       nv1: [
         {
@@ -522,13 +564,15 @@ const data = {
           escola: 'Ilusão',
           tempoConjuracao: '1m',
           alcance: 'Toque',
-          componentes: 'V S M (tinta a base de chumbo que valha pelo menos 10 PO, consumida pelo feitiço',
+          componentes:
+            'V S M (tinta a base de chumbo que valha pelo menos 10 PO, consumida pelo feitiço',
           duracao: '10 Dias',
-          descricao: 'Você escreve em um pergaminho, papel ou qualquer outro material adequado e tinge ele com uma poderosa ilusão que permanece pela duração.\nPara você e para qualquer criatura que você designar quando você conjura essa magia, a escrita parece normal, escrita com a sua caligrafia e transmite qualquer que seja a mensagem que você desejava quando escreveu o texto. Para todos os outros, a escrita aparece como se tivesse sido escrita com uma caligrafia desconhecida ou mágica que é inteligível. Alternativamente, você pode fazer a escrita parecer uma mensagem totalmente diferente, escrita com uma caligrafia e idioma diferentes, apesar de o idioma precisar ser um que você conheça.\\nNo caso da magia ser dissipada, tanto a escrita original quanto a ilusória desaparecem.\\nUma criatura com visão verdadeira pode ler a mensagem escondida.'
-        }
-      ]
-    }
-  }
+          descricao:
+            'Você escreve em um pergaminho, papel ou qualquer outro material adequado e tinge ele com uma poderosa ilusão que permanece pela duração.\nPara você e para qualquer criatura que você designar quando você conjura essa magia, a escrita parece normal, escrita com a sua caligrafia e transmite qualquer que seja a mensagem que você desejava quando escreveu o texto. Para todos os outros, a escrita aparece como se tivesse sido escrita com uma caligrafia desconhecida ou mágica que é inteligível. Alternativamente, você pode fazer a escrita parecer uma mensagem totalmente diferente, escrita com uma caligrafia e idioma diferentes, apesar de o idioma precisar ser um que você conheça.\\nNo caso da magia ser dissipada, tanto a escrita original quanto a ilusória desaparecem.\\nUma criatura com visão verdadeira pode ler a mensagem escondida.',
+        },
+      ],
+    },
+  },
 };
 
 class PersonagemModal extends Component {
@@ -552,10 +596,10 @@ class PersonagemModal extends Component {
         </Modal.Header>
         <Modal.Body className="Marginado background">
           <Container>
-            <PersonagemInfo className="alinhamento-cb" data={data}/>
+            <PersonagemInfo className="alinhamento-cb" data={data} />
             <Row style={{ 'margin-top': '15px' }}>
               <Col>
-                <PersonagemTab data={data}/>
+                <PersonagemTab data={data} />
               </Col>
             </Row>
           </Container>
