@@ -5,6 +5,8 @@ import axios from "axios";
 import PersonagemCard from "../components/PersonagemCard/PersonagemCard";
 import PersonagemModal from '../components/PersonagemModal/PersonagemModal';
 
+import './Page.scss';
+
 function get_estatisticas(event) {
   axios
     .get("/estatisticas")

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto-Regular'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto-Condensed'), url('../fonts/Roboto-Condensed.ttf') format('truetype');
+}
+
+body{
+  font-family: Roboto, Heveltica, SansSerif;
+}
