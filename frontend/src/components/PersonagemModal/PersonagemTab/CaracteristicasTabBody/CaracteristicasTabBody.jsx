@@ -2,22 +2,20 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-//TODO listar as classes
-const listarClasses = (classes) => {
-  return (
-    <Row>
-      <Col>
-        Classes
-      </Col>
-    </Row>
-  )
-}
+import ClassesCaracteristicas from './ClassesCaracteristicas/ClassesCaracteristicas';
+import RacialCaracteristicas from './RacialCaracteristicas/RacialCaracteristicas';
+import TalentosCaracteristicas from './TalentosCaracteristicas/TalentosCaracteristicas';
+
+// <RacialCaracteristicas raca={props.raca} />
+// <TalentosCaracteristicas talentos={props.talentos} />
 
 const caracteristicasTabBody = (props) => {
   return (
-    <Row>
+    <Row className="CaracteristicasTab">
       <Col>
-        <circle fill="#383838" x={5} y={5}></circle>
+        <ClassesCaracteristicas classes={props.classes}/>
+        <RacialCaracteristicas raca={props.raca} />
+        <TalentosCaracteristicas talentos={props.talentos} />
       </Col>
     </Row>
   );
