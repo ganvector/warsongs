@@ -13,9 +13,9 @@ const caracteristicasTabBody = (props) => {
   return (
     <Row className="CaracteristicasTab">
       <Col>
-        <ClassesCaracteristicas classes={props.classes}/>
-        <RacialCaracteristicas raca={props.raca} />
-        <TalentosCaracteristicas talentos={props.talentos} />
+        <RacialCaracteristicas raca={props.raca} className="Caracteristicas"/>
+        <ClassesCaracteristicas classes={props.classes} className="Caracteristicas"/>
+        <TalentosCaracteristicas talentos={props.talentos} className="Caracteristicas"/>
       </Col>
     </Row>
   );
