@@ -83,13 +83,17 @@ $on-error: #000;
 .CaracteristicasTab {
   font-size: 13px;
 
+  .Caracteristicas {
+    margin-bottom: 14px;
+  }
+
   .CaracteristicaTitulo {
     font-weight: 700;
     font-size: 19px;
     margin-bottom: 13px;
   }
 
-  .CaractesticaClasseTitulo {
+  .CaractesticaSubtitulo {
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 13px;
@@ -106,6 +110,7 @@ $on-error: #000;
     margin-bottom: 13px;
     margin-left: 8px;
   }
+
 
   .CaracteristicaObservacao{
     margin-bottom: 13px;
