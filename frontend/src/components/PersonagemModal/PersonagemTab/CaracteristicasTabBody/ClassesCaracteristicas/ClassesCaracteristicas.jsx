@@ -4,16 +4,15 @@ import Col from 'react-bootstrap/Col';
 import DescricaoDaCaracteristica from '../caracteristicasDescricao';
 
 
-const classeCaracteristica = (classe) => {
-  console.log(classe.nome);
+const classeCaracteristica = (classe, className) => {
   let caracteristicas = classe.caracteristicas.map(caracteristica => {
     return <DescricaoDaCaracteristica caracteristica={caracteristica}/>;
   });
   return (
-    <Row id={`caracteristica${classe.nome}`} className={'CaracteristicasClasse'} >
+    <Row id={`caracteristica${classe.nome}`} className={className}>
       <Col>
-        <Row className={"CaractesticaClasseTitulo"}>
-          <Col>Caracteristicas de {classe.nome}</Col>
+        <Row className={"CaractesticaSubtitulo"}>
+          <Col>{classe.nome}</Col>
         </Row>
         {caracteristicas}
       </Col>
@@ -23,7 +22,7 @@ const classeCaracteristica = (classe) => {
 
 const classesCaracteristicas = (props) => {
   let caracteristicas = props.classes.map(classe => {
-    return classeCaracteristica(classe)
+    return classeCaracteristica(classe, props.className)
   })
   return (
     <Row>
