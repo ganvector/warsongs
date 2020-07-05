@@ -40,15 +40,27 @@ const data = {
       nivel: '5',
       caracteristicas: [
         {
-          nome: 'Dado de Vida', descricao: '1D10'
+          nome: 'Dado de Vida',
+          descricao: '1D10',
         },
         {
-          nome: 'Proficiências', descricao: ['todas as armas']
+          nome: 'Proficiências',
+          descricao: ['todas as armas'],
         },
         {
           nome: 'Estilo de Luta: Duelismo',
           descricao:
             'Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.',
+        },
+        {
+          nome: 'Estilo de Luta',
+          descricao:
+            'Você adota um estilo de combate particular que sera sua especialidade.',
+          observacao: {
+            titulo: 'Duelismo',
+            texto:
+              'Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.',
+          },
         },
         {
           nome: 'Retomar o Fôlego',
@@ -62,7 +74,7 @@ const data = {
   alinhamento: 'Caotico Bom',
   player: {
     name: 'Vitor',
-    id: '123456'
+    id: '123456',
   },
   raca: {
     nome: 'Meio-Elfo',
@@ -88,6 +100,7 @@ const data = {
       nome: 'Sortudo',
       descricao:
         'Você possui 3 pontos de sorte. Sempre que fizer uma jogada de ataque, teste de habilidade, ou jogada de salvamento, você pose gastar um ponto de sorte para rolar um d20 adicional. ',
+      observacao:'Pontos Restantes: 3' ,
     },
   ],
   tendencia: 'CB',
