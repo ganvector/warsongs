@@ -27,17 +27,20 @@ $on-error: #000;
 .Modal90w {
   max-width: none !important;
 
-  @media screen and (min-width: $break-hd) {
-    width: 762px;
-  }
+  max-height: calc(100vh - 300px);
+  width: 762px;
 
-  @media screen and (min-width: $break-fhd) {
-    width: 762px;
-  }
-
-  @media screen and (min-width: $break-uwide) {
-    width: 762px;
-  }
+  //@media screen and (min-width: $break-hd) {
+  //  width: 762px;
+  //}
+  //
+  //@media screen and (min-width: $break-fhd) {
+  //  width: 762px;
+  //}
+  //
+  //@media screen and (min-width: $break-uwide) {
+  //  width: 762px;
+  //}
 }
 
 .Bullet {
@@ -75,13 +78,41 @@ $on-error: #000;
   color: red;
 }
 
-.PersonagemTab {}
-.PericiasTab {}
-.AcoesTab {}
-.MagiasTab {}
-.EquipamentoTab {}
+.PersonagemTab {
+  font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
+}
+.PericiasTab {
+  font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
+}
+.AcoesTab {
+  font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
+}
+.MagiasTab {
+  font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
+
+  .MagiaTitulo {
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 13px;
+  }
+}
+.EquipamentoTab {
+  font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
+}
 .CaracteristicasTab {
   font-size: 13px;
+  height: 265px;
+  overflow-y: scroll;
 
   .Caracteristicas {
     margin-bottom: 14px;
