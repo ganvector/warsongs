@@ -59,7 +59,7 @@ const listarMagias = (listaMagias, listaEspacos) => {
 const magiasTabBody = (props) => {
 
   return (
-    <Row>
+    <Row className="MagiasTab">
       <Col>
         <Row>
           <Col>
