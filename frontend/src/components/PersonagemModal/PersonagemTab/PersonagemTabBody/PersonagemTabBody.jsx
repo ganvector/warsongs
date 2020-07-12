@@ -8,7 +8,7 @@ import DadosDeVida from './DadosDeVida/DadosDeVida';
 import TesteContraMorte from './TesteContraMorte/TesteContraMorte';
 
 const personagemTabBody = (props) => (
-  <Row>
+  <Row className="PersonagemTab">
     <Col>
       <Row>
         <Col>

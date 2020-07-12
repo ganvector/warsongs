@@ -7,7 +7,7 @@ import Pericias from './Pericias/Pericias';
 import Sentidos from './Sentidos/Sentidos';
 
 const periciasTabBody = (props) => (
-  <Row>
+  <Row className="PericiasTab">
     <Col>
       <TesteResistencias className="Marginado" teste_res={props.teste_res} />
       <Pericias className="Marginado" pericias={props.pericias} />

@@ -10,7 +10,7 @@ import AcoesReacoes from './AcoesReacoes/AcoesReacoes';
 import AcoesOutros from './AcoesOutros/AcoesOutros';
 
 const acoesTabBody = (props) => (
-  <Row>
+  <Row className="AcoesTab">
     <Col>
       <Row>
         <Col>

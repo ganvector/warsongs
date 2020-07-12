@@ -1,4 +1,6 @@
 import React from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const converterParaOuro = (preco) => {
   const currency = {
@@ -37,22 +39,27 @@ const listarItens = (itens) => {
 const equipamentoTabBody = (props) => {
   const equipamentos = [...props.itens.armas, ...props.itens.armaduras, ...props.itens.itens];
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Ativo</th>
-          <th>Nome</th>
-          <th>Peso</th>
-          <th>Qtd</th>
-          <th>Preço (PO)</th>
-          <th>Tipo</th>
-          <th>Notas</th>
-        </tr>
-      </thead>
-      <tbody>
-      { listarItens(equipamentos) }
-      </tbody>
-    </table>
+    <Row className="EquipamentoTab">
+      <Col>
+        <table>
+          <thead>
+          <tr>
+            {/*TODO Ajustar tamanho */}
+            <th>Ativo</th>
+            <th>Nome</th>
+            <th>Peso</th>
+            <th>Qtd</th>
+            <th>Preço (PO)</th>
+            <th>Tipo</th>
+            <th>Notas</th>
+          </tr>
+          </thead>
+          <tbody>
+          { listarItens(equipamentos) }
+          </tbody>
+        </table>
+      </Col>
+    </Row>
   )
 }
 
