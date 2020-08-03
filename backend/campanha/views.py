@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .models import Campanha
+from .models.campanha import Campanha
 from django.contrib.auth.models import User, AnonymousUser
 
 

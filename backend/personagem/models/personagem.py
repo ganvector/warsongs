@@ -1,9 +1,10 @@
 import math
 from django.conf import settings
 from django.db import models
-from .classe import Classe
-from campanha.models import Campanha
-from .raca import Raca
+from campanha.models.classe import Classe
+from campanha.models.campanha import Campanha
+from campanha.models.raca import Raca
+from usuario.models import Perfil
 
 
 class ClasseDePersonagem:
@@ -33,25 +34,63 @@ class Personagem(models.Model):
     base_sab = models.IntegerField(default=10, null=False)
     base_car = models.IntegerField(default=10, null=False)
 
+    # VALOR TOTAL
+    @property
+    def total_for(self):
+        total = self.base_for
+        if self.raca:
+            total += self.raca.bonus_for
+        return total
+    @property
+    def total_des(self):
+        total = self.base_des
+        if self.raca:
+            total += self.raca.bonus_des
+        return total
+    @property
+    def total_con(self):
+        total = self.base_con
+        if self.raca:
+            total += self.raca.bonus_con
+        return total
+    @property
+    def total_int(self):
+        total = self.base_int
+        if self.raca:
+            total += self.raca.bonus_int
+        return total
+    @property
+    def total_sab(self):
+        total = self.base_sab
+        if self.raca:
+            total += self.raca.bonus_sab
+        return total
+    @property
+    def total_car(self):
+        total = self.base_car
+        if self.raca:
+            total += self.raca.bonus_car
+        return total
+
     # MODIFICADORES DOS VALORES DE HABILIDADE
     @property
     def mod_for(self):
-        return math.floor((self.vh_for - 10) / 2.0)
+        return math.floor((self.total_for - 10) / 2.0)
     @property
     def mod_des(self):
-        return math.floor((self.vh_des - 10) / 2.0)
+        return math.floor((self.total_des - 10) / 2.0)
     @property
     def mod_con(self):
-        return math.floor((self.vh_con - 10) / 2.0)
+        return math.floor((self.total_con - 10) / 2.0)
     @property
     def mod_int(self):
-        return math.floor((self.vh_int - 10) / 2.0)
+        return math.floor((self.total_int - 10) / 2.0)
     @property
     def mod_sab(self):
-        return math.floor((self.vh_sab - 10) / 2.0)
+        return math.floor((self.total_sab - 10) / 2.0)
     @property
     def mod_car(self):
-        return math.floor((self.vh_car - 10) / 2.0)
+        return math.floor((self.total_car - 10) / 2.0)
     # PROFICIENCIA
     @property
     def proficiencia(self):
@@ -62,7 +101,8 @@ class Personagem(models.Model):
     #     fields = ['nome', 'nivel']
 
     def __str__(self):
-        return f'[Nome: {self.nome}] - [Nivel: {self.nivel_total}]- [Player: {self.jogador.username}] - [Campanha: {self.campanha.titulo}]'
+        return f'[Nome: {self.nome}] - [Nivel: {self.nivel_total}]- [Player: {self.jogador.perfil}] - [Campanha: {self.campanha.titulo}]'
+
 
 class ClasseDePersonagem(models.Model):
     nivel = models.IntegerField(default=1)
