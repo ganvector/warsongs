@@ -52,13 +52,42 @@ class Pericia(models.Model):
 
 
 class Classe(models.Model):
-
-    #
     nome = models.CharField(max_length=100)
     pericias = models.ManyToManyField(Pericia)
     proficiencias = models.ManyToManyField(Proficiencia)
 
     campanha = models.ForeignKey(Campanha, null=True, default=None, on_delete=models.SET_NULL)
 
+    @property
+    def caracteristicas_de_classe(self):
+        return CaracteristicasClasse.objects.filter(classe=self.id)
+
+    def adicionar_caracteristica(self, nivel, titulo, descricao):
+        cc = CaracteristicasClasse()
+
+        cc.nivel = nivel
+        cc.titulo = titulo
+        cc.descricao = descricao
+        cc.classe = self.id
+
+        cc.save()
+
     def __str__(self):
         return self.nome
+
+
+class CaracteristicasClasse(models.Model):
+    nivel = models.IntegerField(default=1)
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    classe = models.ForeignKey(Classe, on_delete=models.CASCADE)
+
+    def to_object(self):
+        return {
+            "nivel": self.nivel,
+            "titulo": self.titulo,
+            "descricao": self.descricao
+        }
+
+    def __str__(self):
+        return f'{self.nivel} - {self.titulo}'
