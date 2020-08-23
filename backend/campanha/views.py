@@ -1,46 +1,33 @@
-from django.http import JsonResponse
-from .models.campanha import Campanha
-from django.contrib.auth.models import User, AnonymousUser
+from rest_framework import viewsets
+from rest_framework import permissions
+
+from campanha.models.campanha import Campanha
+from campanha.models.aventura import Aventura
+from campanha.models.classe import Classe
+from campanha.models.raca import Raca
+from campanha.serializers import CampanhaSerializer, AventuraSerializer, RacaSerializer, ClasseSerializer
 
 
-def get_campanhas(request):
-    campanhas = [
-        {
-            'titulo': 'Teste1',
-            'mestre': 'Vitor',
-            'n_players': 2,
-            'player': [
-                {
-                    'nome': 'x',
-                    'nivel': 2,
-                    'classes': [
-                        'lvl xx',
-                        'lvl xy'
-                    ] 
-                },
-                {
-                    'nome': 'y',
-                    'nivel': 3,
-                    'classes': [
-                        'lvl xx',
-                        'lvl xy',
-                        'lvl yy'
-                    ] 
-                }
-            ]
-        }
-    ]
+class CampanhaViewSet(viewsets.ModelViewSet):
+    queryset = Campanha.objects.all()
+    serializer_class = CampanhaSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-    qtd = User.objects.count()
-    user = User.objects.first()
-    print(f'User {request.user}')
 
-    if(type(request.user) != AnonymousUser):
-        #campanhas = Campanha.objects.filter(mestre=user)
-        if campanhas:
-            campanhas = campanhas
-        else:
-            campanhas = 'Vazio'
-    else:
-        campanhas = 'you must be logged in to see your campaigns'
-    return JsonResponse({"campanhas": campanhas})
+class AventuraViewSet(viewsets.ModelViewSet):
+    queryset = Aventura.objects.all()
+    serializer_class = AventuraSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class RacaViewSet(viewsets.ModelViewSet):
+    queryset = Raca.objects.all()
+    serializer_class = RacaSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class ClasseViewSet(viewsets.ModelViewSet):
+    queryset = Classe.objects.all()
+    serializer_class = ClasseSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
