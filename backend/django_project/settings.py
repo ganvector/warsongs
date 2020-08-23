@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     "django"
 ]
 
+ASGI_APPLICATION = "sessao.routing.application"
 
 # Application definition
 
@@ -42,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'campanha',
+    'sessao',
     'personagem',
     'usuario',
-    'rest_framework'
+    'rest_framework',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -92,7 +95,7 @@ DATABASES = {
     }
 }
 
-print(DATABASES)
+# print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -112,6 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
