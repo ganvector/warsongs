@@ -1,28 +1,11 @@
 from django.db import models
-
+from django.contrib.postgres import fields
 from .campanha import Campanha
 
 
-class Proficiencia(models.Model):
-    TIPO = {
-        ('ArdrL', 'Armaduras Leves'),
-        ('ArdrM', 'Armaduras Médias'),
-        ('ArdrP', 'Armaduras Pesadas'),
-        ('ArmaS', 'Armas Simples'),
-        ('ArmaM', 'Armas Marcials'),
-    }
-    nome = models.CharField(max_length=5, choices=TIPO)
-
-    def __str__(self):
-        for i in self.TIPO:
-            if i[0] == self.nome:
-                return i[1]
-
-
-class Pericia(models.Model):
-    '''Ferefente as pericias que a classe tem possibilidade de pegar e nao as do personagem diretamente.
-    '''
-    TIPO = {
+class Classe(models.Model):
+    PERICIAS_CHOICES = {
+        ('0', 'VAZIO'),
         ('ATL', 'Atletismo'),
         ('ACR', 'Acrobacia'),
         ('FUR', 'Furtividade'),
@@ -43,20 +26,40 @@ class Pericia(models.Model):
         ('PER', 'Persuação'),
     }
 
-    nome = models.CharField(max_length=3, choices=TIPO)
+    # TODO implementar ferramentas em proficiencias
+    PROFICIENCIA_CHOICES = {
+        ('0', 'VAZIO'),
+        ('ArdrL', 'Armaduras Leves'),
+        ('ArdrM', 'Armaduras Médias'),
+        ('ArdrP', 'Armaduras Pesadas'),
+        ('ArmaS', 'Armas Simples'),
+        ('ArmaM', 'Armas Marcials'),
+    }
 
-    def __str__(self):
-        for i in self.TIPO:
-            if i[0] == self.nome:
-                return i[1]
+    TESTE_RESISTENCIA_CHOICES = {
+        ('FOR', 'Força'),
+        ('DES', 'Destreza'),
+        ('CON', 'Constituição'),
+        ('INT', 'Inteligência'),
+        ('SAB', 'Sabedoria'),
+        ('CAR', 'Carisma')
+    }
 
-
-class Classe(models.Model):
     nome = models.CharField(max_length=100)
-    pericias = models.ManyToManyField(Pericia)
-    proficiencias = models.ManyToManyField(Proficiencia)
 
     campanha = models.ForeignKey(Campanha, null=True, default=None, on_delete=models.SET_NULL)
+
+    proficiencias = fields.ArrayField(
+        models.CharField(max_length=5, choices=PROFICIENCIA_CHOICES, blank=True, default='0'), default=list
+    )
+
+    pericias = fields.ArrayField(
+        models.CharField(max_length=3, choices=PERICIAS_CHOICES, blank=True, default='0'), default=list
+    )
+
+    teste_resistencia = fields.ArrayField(
+        models.CharField(max_length=3, choices=TESTE_RESISTENCIA_CHOICES, blank=True, default='0'), default=list, max_length=2
+    )
 
     @property
     def caracteristicas_de_classe(self):
@@ -68,7 +71,7 @@ class Classe(models.Model):
         cc.nivel = nivel
         cc.titulo = titulo
         cc.descricao = descricao
-        cc.classe = self.id
+        cc.classe = self
 
         cc.save()
 
