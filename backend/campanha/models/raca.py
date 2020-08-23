@@ -2,23 +2,6 @@ from django.db import models
 from .campanha import Campanha
 
 
-class Traco(models.Model):
-    nome = models.CharField(max_length=100)
-    descricao = models.TextField()
-    campanha = models.ForeignKey(Campanha, null=True, default=None, on_delete=models.SET_NULL)
-
-    def __str__(self):
-        return self.nome
-
-
-class Idioma(models.Model):
-    nome = models.CharField(max_length=100)
-    campanha = models.ForeignKey(Campanha, null=True, default=None, on_delete=models.SET_NULL)
-
-    def __str__(self):
-        return self.nome
-
-
 class Raca(models.Model):
 
     nome = models.CharField(max_length=100, null=True)
@@ -31,8 +14,22 @@ class Raca(models.Model):
     bonus_sab = models.IntegerField(default=0)
     bonus_car = models.IntegerField(default=0)
 
-    tracos = models.ManyToManyField(Traco)
-    idioma = models.ForeignKey(Idioma, null=True, on_delete=models.SET_NULL)
+    idioma = models.CharField(max_length=30, null=True)
+
+    campanha = models.ForeignKey(Campanha, null=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome
+
+    @property
+    def tracos(self):
+        return self.traco_set.all()
+
+class Traco(models.Model):
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField()
+    campanha = models.ForeignKey(Campanha, null=False, on_delete=models.CASCADE)
+    raca = models.ForeignKey(Raca, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
