@@ -16,6 +16,14 @@ services:
       POSTGRES_ADDRESS: ${POSTGRES_ADDRESS}
     depends_on:
       - postgres
+      - redis
+      
+  redis:
+    image: redis
+    command: redis-server
+    ports:
+      - "6379:6379"
+      
   react:
     build: ./frontend
     volumes:
