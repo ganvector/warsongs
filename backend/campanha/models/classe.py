@@ -23,7 +23,7 @@ class Classe(models.Model):
         ('ATU', 'Atuação'),
         ('ENG', 'Enganação'),
         ('ITM', 'Intimidação'),
-        ('PER', 'Persuação'),
+        ('PRS', 'Persuação'),
     }
 
     # TODO implementar ferramentas em proficiencias
@@ -34,6 +34,8 @@ class Classe(models.Model):
         ('ArdrP', 'Armaduras Pesadas'),
         ('ArmaS', 'Armas Simples'),
         ('ArmaM', 'Armas Marcials'),
+        ('Escud', 'Escudos')
+        #TODO fazer proficiencia com ferramentas
     }
 
     TESTE_RESISTENCIA_CHOICES = {
@@ -60,6 +62,8 @@ class Classe(models.Model):
     teste_resistencia = fields.ArrayField(
         models.CharField(max_length=3, choices=TESTE_RESISTENCIA_CHOICES, blank=True, default='0'), default=list, max_length=2
     )
+
+    dado_de_vida = models.IntegerField(null=False, default=0)
 
     @property
     def caracteristicas_de_classe(self):

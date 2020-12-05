@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='ClasseDePersonagem',
+            name='PersonagemClasse',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nivel', models.IntegerField(default=1)),
@@ -30,6 +30,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='personagem',
             name='classes',
-            field=models.ManyToManyField(through='personagem.ClasseDePersonagem', to='personagem.Classe'),
+            field=models.ManyToManyField(through='personagem.PersonagemClasse', to='personagem.Classe'),
         ),
     ]

@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ClasseDePersonagem',
+            name='PersonagemClasse',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nivel', models.IntegerField(default=1)),
@@ -64,13 +64,8 @@ class Migration(migrations.Migration):
             name='Traco',
         ),
         migrations.AddField(
-            model_name='classedepersonagem',
-            name='personagem',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='personagem.Personagem'),
-        ),
-        migrations.AddField(
             model_name='personagem',
             name='classes',
-            field=models.ManyToManyField(through='personagem.ClasseDePersonagem', to='campanha.Classe'),
+            field=models.ManyToManyField(through='personagem.PersonagemClasse', to='campanha.Classe'),
         ),
     ]

@@ -21,9 +21,17 @@ class Raca(models.Model):
     def __str__(self):
         return self.nome
 
-    @property
-    def tracos(self):
+    def adicionar_traco(self, nome, descricao):
+        traco = Traco()
+        traco.nome = nome
+        traco.descricao = descricao
+        traco.campanha = self.campanha
+        traco.raca = self
+        traco.save()
+
+    def get_tracos(self):
         return self.traco_set.all()
+
 
 class Traco(models.Model):
     nome = models.CharField(max_length=100)

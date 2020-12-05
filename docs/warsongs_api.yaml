@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Warsongs API
+  description: bla bla bla
+  version: 0.2
+
+servers:
+  - url: http://0.0.0.0:8000
+
+paths:
+  /api/getUser:
+    post:
+      tags:
+        - Usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+      description: Optional descriptions
+      responses:
+        "200":
+          description: resposta
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/usuarioResponse"
+    get:
+      tags:
+        - Usuario
+      description: Optional descriptions
+      responses:
+        "200":
+          description: resposta
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/usuarioResponse"
+
+components:
+  schemas:
+    usuarioResponse:
+      type: object
+      properties:
+        sucesso:
+          type: boolean
+          example: true
+        detalhes:
+          type: string
+          example: "Processos foram atualizados"
+
+    Personagem:
+      type: object
+      properties:
+        nome:
+          type: string
+          example: "Merric De'Milliard"
+        nivel_total:
+          type: integer
+          example: 15
+        jogador:
+          type: integer
+          example: 1
+        campanha:
+          type: integer
+          example: 1
+        raca:
+          type: integer
+          example: 1
+        classes:
+          type: array
+          items:
+            type: integer
+          example:
+            - 1
+            - 2
+        base_for:
+          type: integer
+          example: 8
+        base_des:
+          type: integer
+          example: 14
+        base_con:
+          type: integer
+          example: 13
+        base_int:
+          type: integer
+          example: 10
+        base_sab:
+          type: integer
+          example: 12
+        base_car:
+          type: integer
+          example: 15

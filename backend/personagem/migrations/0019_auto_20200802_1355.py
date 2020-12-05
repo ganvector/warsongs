@@ -29,6 +29,6 @@ class Migration(migrations.Migration):
             field=models.CharField(choices=[('ArdrL', 'Armaduras Leves'), ('ArdrM', 'Armaduras Médias'), ('ArmaM', 'Armas Marcials'), ('ArmaS', 'Armas Simples'), ('ArdrP', 'Armaduras Pesadas')], max_length=5),
         ),
         migrations.DeleteModel(
-            name='ClasseDePersonagem',
+            name='PersonagemClasse',
         ),
     ]

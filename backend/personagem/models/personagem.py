@@ -7,7 +7,7 @@ from campanha.models.raca import Raca
 from usuario.models import Perfil
 
 
-class ClasseDePersonagem:
+class PersonagemClasse:
     pass
 
 
@@ -17,12 +17,12 @@ class Personagem(models.Model):
     jogador = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     campanha = models.ForeignKey(Campanha, null=True, default=None, on_delete=models.SET_NULL)
     raca = models.ForeignKey(Raca, null=True, default=None, on_delete=models.SET_NULL)
-    classes = models.ManyToManyField(Classe, through="ClasseDePersonagem", through_fields=('personagem', 'classe'))
+    classes = models.ManyToManyField(Classe, through="PersonagemClasse", through_fields=('personagem', 'classe'))
 
     def save(self):
         super().save()
         nivel = 0
-        for cp in self.classedepersonagem_set.all():
+        for cp in self.classepersonagem_set.all():
             nivel += cp.nivel
         self.nivel_total = nivel
 
@@ -104,7 +104,7 @@ class Personagem(models.Model):
         return f'[Nome: {self.nome}] - [Nivel: {self.nivel_total}]- [Player: {self.jogador.perfil}] - [Campanha: {self.campanha.titulo}]'
 
 
-class ClasseDePersonagem(models.Model):
+class PersonagemClasse(models.Model):
     nivel = models.IntegerField(default=1)
     personagem = models.ForeignKey(Personagem, on_delete=models.CASCADE)
     classe = models.ForeignKey(Classe, on_delete=models.CASCADE)

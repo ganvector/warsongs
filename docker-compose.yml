@@ -16,14 +16,14 @@ services:
       POSTGRES_ADDRESS: ${POSTGRES_ADDRESS}
     depends_on:
       - postgres
-      - redis
-      
+      # - redis
+
   redis:
     image: redis
     command: redis-server
     ports:
       - "6379:6379"
-      
+
   react:
     build: ./frontend
     volumes:
@@ -47,6 +47,15 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      TZ: 'America/Cuiaba'
+      TZ: "America/Cuiaba"
     volumes:
       - ./postgres:/var/lib/postgres/11/main
+
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8092:8080
+    volumes:
+      - ./docs:/temp
+    environment:
+      - SWAGGER_JSON=/temp/warsongs_api.yaml
